@@ -1,0 +1,23 @@
+{
+  "name": "Friends Tours & Travels | Luxury Travel Agency in Indore",
+  "short_name": "Friends Tours",
+  "description": "Premium travel booking and tour planning agency in Indore, Madhya Pradesh. Custom luxury tour packages.",
+  "icons": [
+    {
+      "src": "/web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "theme_color": "#0B1B3A",
+  "background_color": "#020813",
+  "display": "standalone",
+  "start_url": "/"
+}

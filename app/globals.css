@@ -1,0 +1,117 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme {
+  --font-sans: var(--font-sans), sans-serif;
+  --font-serif: var(--font-serif), serif;
+  --font-script: var(--font-script), cursive;
+  
+  --color-brand-blue: #020813;
+  --color-brand-navy: #05162e;
+  --color-brand-navy-light: #0d284f;
+  --color-brand-gold: #c5a880;
+  --color-brand-gold-light: #e5d5c0;
+  --color-brand-gold-dark: #9e825a;
+  
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-spin-slow: spin 20s linear infinite;
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(0.5deg); }
+  }
+}
+
+/* Custom scrollbar for premium feel */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #020813;
+}
+::-webkit-scrollbar-thumb {
+  background: #c5a880;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #9e825a;
+}
+
+/* Base custom classes to match high fidelity */
+.gold-gradient-text {
+  background: linear-gradient(135deg, #c5a880 0%, #e5d5c0 50%, #9e825a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-border-glow {
+  box-shadow: 0 0 15px rgba(197, 168, 128, 0.2);
+  border: 1px solid rgba(197, 168, 128, 0.3);
+}
+
+.gold-border-glow:hover {
+  box-shadow: 0 0 25px rgba(197, 168, 128, 0.5);
+  border-color: rgba(197, 168, 128, 0.7);
+}
+
+.font-script-style {
+  font-family: var(--font-script), cursive;
+}
+
+/* Sunset glowing corner flares & borders mimicking sunset rays striking the screen */
+.sunset-frame {
+  box-shadow: inset 0 0 40px rgba(197, 168, 128, 0.05);
+}
+
+.sunset-sunray-tl {
+  background: radial-gradient(circle 220px at top left, rgba(217, 119, 6, 0.2) 0%, rgba(197, 168, 128, 0.08) 40%, rgba(2, 8, 19, 0) 100%);
+}
+
+.sunset-sunray-tr {
+  background: radial-gradient(circle 220px at top right, rgba(220, 38, 38, 0.15) 0%, rgba(217, 119, 6, 0.08) 45%, rgba(2, 8, 19, 0) 100%);
+}
+
+.sunset-sunray-bl {
+  background: radial-gradient(circle 220px at bottom left, rgba(180, 83, 9, 0.15) 0%, rgba(197, 168, 128, 0.05) 50%, rgba(2, 8, 19, 0) 100%);
+}
+
+.sunset-sunray-br {
+  background: radial-gradient(circle 220px at bottom right, rgba(217, 119, 6, 0.15) 0%, rgba(197, 168, 128, 0.05) 50%, rgba(2, 8, 19, 0) 100%);
+}
+
+.sunset-edge-glow-v {
+  background: linear-gradient(to bottom, rgba(217, 119, 6, 0) 20%, rgba(217, 119, 6, 0.12) 50%, rgba(217, 119, 6, 0) 80%);
+}
+
+.sunset-edge-glow-h {
+  background: linear-gradient(to right, rgba(197, 168, 128, 0) 20%, rgba(197, 168, 128, 0.12) 50%, rgba(197, 168, 128, 0) 80%);
+}
+
+@keyframes sunset-shimmer {
+  0%, 100% {
+    opacity: 0.85;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.04);
+  }
+}
+
+.animate-sunset-shimmer {
+  animation: sunset-shimmer 7s ease-in-out infinite;
+}
+
+@keyframes ray-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-ray-rotate {
+  animation: ray-rotate 35s linear infinite;
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Friends Tours & Travels",
+  "description": "Premium travel booking and tour planning agency homepage featuring beautiful destination displays and customized packages.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
