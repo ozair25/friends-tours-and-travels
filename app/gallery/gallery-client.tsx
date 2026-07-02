@@ -50,23 +50,23 @@ export default function GalleryClient() {
   const currentLightboxItem = lightboxIndex !== null ? filteredItems[lightboxIndex] : null;
 
   return (
-    <div className="relative min-h-screen text-gray-100 bg-[#020813] overflow-x-hidden">
+    <div className="relative min-h-screen text-slate-800 bg-[#FAF8F5] overflow-x-hidden">
       
       {/* IMMERSIVE LUXURY SUNSET CORNER SHINE EFFECT */}
       <div className="fixed inset-0 pointer-events-none z-30 overflow-hidden sunset-frame">
         <div className="absolute inset-2 sm:inset-4 md:inset-6 border border-[#C9A227]/15 rounded-lg sm:rounded-xl pointer-events-none" />
-        <div className="absolute top-0 left-0 w-80 h-80 sunset-sunray-tl animate-sunset-shimmer opacity-80 pointer-events-none" />
-        <div className="absolute top-0 right-0 w-80 h-80 sunset-sunray-tr animate-sunset-shimmer [animation-delay:2s] opacity-75 pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-80 h-80 sunset-sunray-bl animate-sunset-shimmer [animation-delay:4s] opacity-75 pointer-events-none" />
-        <div className="absolute bottom-0 right-0 w-80 h-80 sunset-sunray-br animate-sunset-shimmer [animation-delay:1.5s] opacity-80 pointer-events-none" />
+        <div className="absolute top-0 left-0 w-80 h-80 sunset-sunray-tl animate-sunset-shimmer opacity-35 pointer-events-none" />
+        <div className="absolute top-0 right-0 w-80 h-80 sunset-sunray-tr animate-sunset-shimmer [animation-delay:2s] opacity-35 pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-80 h-80 sunset-sunray-bl animate-sunset-shimmer [animation-delay:4s] opacity-35 pointer-events-none" />
+        <div className="absolute bottom-0 right-0 w-80 h-80 sunset-sunray-br animate-sunset-shimmer [animation-delay:1.5s] opacity-35 pointer-events-none" />
       </div>
 
       <Navbar />
 
       {/* HERO BANNER SECTION */}
-      <section className="relative pt-36 pb-16 bg-gradient-to-b from-[#0B1B3A]/60 via-[#020813] to-[#020813] flex flex-col items-center justify-center text-center px-4">
+      <section className="relative pt-36 pb-16 bg-gradient-to-b from-[#EFECE6]/40 via-[#FAF8F5] to-[#FAF8F5] flex flex-col items-center justify-center text-center px-4">
         {/* Subtle decorative sky glow */}
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#C9A227]/5 rounded-full filter blur-[120px] pointer-events-none" />
+        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#C9A227]/10 rounded-full filter blur-[120px] pointer-events-none" />
 
         <div className="relative z-10 max-w-4xl mx-auto flex flex-col items-center">
           {/* Tagline Badge */}
@@ -74,10 +74,10 @@ export default function GalleryClient() {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#0B1B3A] border border-[#C9A227]/30 mb-6"
+            className="flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/80 border border-[#C9A227]/40 mb-6 backdrop-blur-sm"
           >
-            <Compass className="w-4 h-4 text-[#C9A227] animate-spin-slow" />
-            <span className="text-[10px] font-mono tracking-[0.2em] text-[#FAF5E6] uppercase font-bold">
+            <Compass className="w-4 h-4 text-[#8C6A3D] animate-spin-slow" />
+            <span className="text-[10px] font-mono tracking-[0.2em] text-[#0B1B3A] uppercase font-bold">
               PORTFOLIO OF WANDERLUST
             </span>
           </motion.div>
@@ -87,9 +87,9 @@ export default function GalleryClient() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="font-serif text-4xl sm:text-5xl md:text-6xl text-white font-semibold tracking-tight uppercase leading-none"
+            className="font-serif text-4xl sm:text-5xl md:text-6xl text-[#0B1B3A] font-bold tracking-tight uppercase leading-none"
           >
-            WANDERLUST <span className="text-[#C9A227] italic font-serif">GALLERY</span>
+            WANDERLUST <span className="text-[#8C6A3D] italic font-serif">GALLERY</span>
           </motion.h1>
 
           {/* Slogan ornament */}
@@ -99,16 +99,16 @@ export default function GalleryClient() {
             transition={{ duration: 1, delay: 0.3 }}
             className="flex items-center gap-3 mt-6 w-48 sm:w-64"
           >
-            <div className="h-[1px] flex-1 bg-[#C9A227]/40"></div>
-            <div className="w-2 h-2 rounded-full bg-[#C9A227]"></div>
-            <div className="h-[1px] flex-1 bg-[#C9A227]/40"></div>
+            <div className="h-[1px] flex-1 bg-[#8C6A3D]/40"></div>
+            <div className="w-2 h-2 rounded-full bg-[#8C6A3D]"></div>
+            <div className="h-[1px] flex-1 bg-[#8C6A3D]/40"></div>
           </motion.div>
 
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xs sm:text-sm text-gray-400 mt-6 max-w-xl leading-relaxed font-sans"
+            className="text-xs sm:text-sm text-slate-700 mt-6 max-w-xl leading-relaxed font-sans font-medium"
           >
             Step into the magnificent realms we have unlocked for travelers. Filter photos by destination, explore raw details, and feel the visual essence of your next luxury holiday.
           </motion.p>
@@ -117,17 +117,17 @@ export default function GalleryClient() {
 
       {/* FILTER TABS */}
       <section className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
-        <div className="flex flex-wrap gap-2 justify-center py-2 border-b border-white/5">
+        <div className="flex flex-wrap gap-2.5 justify-center py-3 border-b border-[#0B1B3A]/10">
           {destinations.map((dest) => (
             <button
               key={dest}
               onClick={() => {
                 setActiveTab(dest);
               }}
-              className={`px-4 sm:px-5 py-2.5 rounded-full text-[10px] font-bold tracking-widest uppercase transition-all duration-300 relative ${
+              className={`px-5 py-2.5 rounded-full text-xs font-bold tracking-widest uppercase transition-all duration-300 shadow-sm relative ${
                 activeTab === dest
-                  ? 'text-[#020813] bg-[#C9A227]'
-                  : 'text-gray-400 hover:text-[#C9A227]'
+                  ? 'text-white bg-[#0B1B3A] scale-105'
+                  : 'text-slate-800 bg-[#FAF8F5] hover:text-[#C9A227] hover:bg-white border border-[#0B1B3A]/10'
               }`}
             >
               {dest}
@@ -152,7 +152,7 @@ export default function GalleryClient() {
                 transition={{ duration: 0.4 }}
                 key={item.id}
                 onClick={() => openLightbox(item)}
-                className="group relative h-72 rounded-3xl overflow-hidden border border-white/5 cursor-pointer shadow-lg hover:border-[#C9A227]/40 duration-300 bg-[#0B1B3A]/30"
+                className="group relative h-72 rounded-3xl overflow-hidden border border-[#0B1B3A]/10 cursor-pointer shadow-xl hover:border-[#C9A227] duration-300 bg-[#FAF8F5]"
               >
                 <Image
                   src={item.url}
@@ -169,14 +169,14 @@ export default function GalleryClient() {
                 {/* Content Overlay */}
                 <div className="absolute inset-0 p-6 flex flex-col justify-end translate-y-2 sm:translate-y-4 sm:group-hover:translate-y-0 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 duration-300 z-10">
                   <div className="space-y-1">
-                    <span className="text-[9px] font-mono tracking-widest text-[#C9A227] uppercase flex items-center gap-1">
+                    <span className="text-[9px] font-mono tracking-widest text-[#C9A227] uppercase flex items-center gap-1 font-bold">
                       <MapPin className="w-3.5 h-3.5 text-[#C9A227]" />
                       {item.destination}
                     </span>
                     <h3 className="font-serif text-lg text-white font-semibold">
                       {item.title}
                     </h3>
-                    <p className="text-[11px] text-gray-300 leading-normal font-sans">
+                    <p className="text-[11px] text-gray-200 leading-normal font-sans">
                       {item.description}
                     </p>
                   </div>
@@ -205,7 +205,7 @@ export default function GalleryClient() {
             {/* Top Bar */}
             <div className="flex items-center justify-between relative z-10 w-full max-w-7xl mx-auto py-2">
               <div className="flex flex-col">
-                <span className="text-[9px] font-mono tracking-widest text-[#C9A227] uppercase flex items-center gap-1">
+                <span className="text-[9px] font-mono tracking-widest text-[#C9A227] uppercase flex items-center gap-1 font-bold">
                   <MapPin className="w-3.5 h-3.5" />
                   {currentLightboxItem.destination}
                 </span>
