@@ -6,12 +6,12 @@
   --font-serif: var(--font-serif), serif;
   --font-script: var(--font-script), cursive;
   
-  --color-brand-blue: #020813;
-  --color-brand-navy: #05162e;
-  --color-brand-navy-light: #0d284f;
-  --color-brand-gold: #c5a880;
-  --color-brand-gold-light: #e5d5c0;
-  --color-brand-gold-dark: #9e825a;
+  --color-brand-blue: #FAF8F5;
+  --color-brand-navy: #FFFFFF;
+  --color-brand-navy-light: #EFECE6;
+  --color-brand-gold: #8C6A3D;
+  --color-brand-gold-light: #C9A227;
+  --color-brand-gold-dark: #5C4527;
   
   --animate-float: float 6s ease-in-out infinite;
   --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
@@ -28,31 +28,31 @@
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #020813;
+  background: #FAF8F5;
 }
 ::-webkit-scrollbar-thumb {
-  background: #c5a880;
+  background: #8C6A3D;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #9e825a;
+  background: #5C4527;
 }
 
 /* Base custom classes to match high fidelity */
 .gold-gradient-text {
-  background: linear-gradient(135deg, #c5a880 0%, #e5d5c0 50%, #9e825a 100%);
+  background: linear-gradient(135deg, #5C4527 0%, #8C6A3D 50%, #C9A227 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .gold-border-glow {
-  box-shadow: 0 0 15px rgba(197, 168, 128, 0.2);
-  border: 1px solid rgba(197, 168, 128, 0.3);
+  box-shadow: 0 0 15px rgba(140, 106, 61, 0.08);
+  border: 1px solid rgba(140, 106, 61, 0.2);
 }
 
 .gold-border-glow:hover {
-  box-shadow: 0 0 25px rgba(197, 168, 128, 0.5);
-  border-color: rgba(197, 168, 128, 0.7);
+  box-shadow: 0 0 25px rgba(140, 106, 61, 0.15);
+  border-color: rgba(140, 106, 61, 0.45);
 }
 
 .font-script-style {

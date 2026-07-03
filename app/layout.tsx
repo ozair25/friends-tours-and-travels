@@ -33,7 +33,7 @@ export const metadata: Metadata = generateMetadataHelper({
 export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
     <html lang="en" className={`${inter.variable} ${cinzel.variable} ${greatVibes.variable} scroll-smooth`} suppressHydrationWarning>
-      <body className="antialiased bg-[#020813] text-gray-100 min-h-screen font-sans selection:bg-amber-400 selection:text-slate-900" suppressHydrationWarning>
+      <body className="antialiased bg-[#FAF8F5] text-slate-900 min-h-screen font-sans selection:bg-amber-400 selection:text-slate-900" suppressHydrationWarning>
         {/* Centralized Global SEO Schemas */}
         <OrganizationSchema />
         <TravelAgencySchema />

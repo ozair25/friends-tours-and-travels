@@ -345,7 +345,7 @@ export default function HomePage() {
               src="https://res.cloudinary.com/dtrvyelcg/image/upload/v1782943271/ChatGPT_Image_Jul_1_2026_12_44_13_AM_q0ctqd.png"
               alt="Dreamliner plane flying in pristine blue sky and soft clouds"
               fill
-              className="object-cover object-[70%_center] opacity-100 brightness-105"
+              className="object-cover object-[70%_center] opacity-100 brightness-125 contrast-[1.05]"
               style={{
                 marginLeft: '4px',
                 marginRight: '-5px',
@@ -367,7 +367,7 @@ export default function HomePage() {
               src="https://res.cloudinary.com/dtrvyelcg/image/upload/v1782943255/ChatGPT_Image_Jul_1_2026_05_58_58_PM_vdx6is.png"
               alt="Dreamliner plane flying in pristine blue sky and soft clouds"
               fill
-              className="object-cover sm:object-center opacity-100 brightness-105"
+              className="object-cover sm:object-center opacity-100 brightness-125 contrast-[1.05]"
               style={{
                 marginTop: '-44px',
                 marginLeft: '5px',
@@ -384,14 +384,14 @@ export default function HomePage() {
           </div>
 
           {/* Left-side Dark Overlay for Desktop Only */}
-          <div className="hidden sm:block absolute inset-y-0 left-0 w-[45%] z-[2] pointer-events-none" style={{ background: 'linear-gradient(to right, rgba(11, 27, 58, 0.95) 0%, rgba(11, 27, 58, 0.6) 65%, rgba(11, 27, 58, 0) 100%)' }} />
+          <div className="hidden sm:block absolute inset-y-0 left-0 w-[45%] z-[2] pointer-events-none" style={{ background: 'linear-gradient(to right, rgba(11, 27, 58, 0.8) 0%, rgba(11, 27, 58, 0.4) 65%, rgba(11, 27, 58, 0) 100%)' }} />
 
           {/* Mobile View Dark Overlay for superb readability */}
-          <div className="block sm:hidden absolute inset-0 bg-gradient-to-b from-[#0B1B3A]/60 via-[#0B1B3A]/30 to-transparent z-[2] pointer-events-none" />
+          <div className="block sm:hidden absolute inset-0 bg-gradient-to-b from-[#0B1B3A]/45 via-[#0B1B3A]/20 to-transparent z-[2] pointer-events-none" />
 
           {/* Sophisticated gradient overlay to blend into light cream at bottom */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#FAF8F5] via-transparent to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#FAF8F5]/10 via-transparent to-[#FAF8F5]/10" />
+          <div className="absolute inset-x-0 bottom-0 h-64 bg-gradient-to-t from-[#FAF8F5] via-[#FAF8F5]/20 to-transparent z-[2]" />
+          <div className="absolute inset-x-0 bottom-0 h-64 bg-gradient-to-r from-[#FAF8F5]/5 via-transparent to-[#FAF8F5]/5 z-[2]" />
         </div>
 
         {/* MOBILE ONLY HERO CONTENT */}
