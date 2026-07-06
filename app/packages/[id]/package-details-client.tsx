@@ -28,7 +28,7 @@ export default function PackageDetailsClient({ pack }: PackageDetailsClientProps
 
   // Pre-filled WhatsApp message
   const whatsappNumber = "919303271444";
-  const whatsappText = `Hello Friends Tours & Travels, I am highly interested in booking the tour package: "${pack.name}" (${pack.duration}) for ${pack.destination}. Please guide me on booking process.`;
+  const whatsappText = `Hello Friends Tours & Travels, I am highly interested in booking the tour package: "${pack.name}" (${pack.duration || 'Customized'}) for ${pack.destination}. Please guide me on booking process.`;
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappText)}`;
 
   return (
@@ -79,7 +79,7 @@ export default function PackageDetailsClient({ pack }: PackageDetailsClientProps
               </span>
               <span className="bg-white/95 border border-slate-200 text-slate-800 text-[10px] font-bold tracking-widest uppercase px-3 py-1 rounded-full flex items-center gap-1.5 shadow-sm">
                 <Calendar className="w-3.5 h-3.5 text-[#8C6A3D]" />
-                {pack.duration}
+                {pack.duration || 'Customized'}
               </span>
             </div>
 
@@ -89,9 +89,11 @@ export default function PackageDetailsClient({ pack }: PackageDetailsClientProps
             </h1>
 
             {/* Price Preview for Mobile */}
-            <p className="text-xs text-gray-200 sm:hidden">
-              Starting at <span className="font-serif text-base text-[#C9A227] font-bold">{pack.startingPrice}</span> per person
-            </p>
+            {pack.startingPrice && (
+              <p className="text-xs text-gray-200 sm:hidden">
+                Starting at <span className="font-serif text-base text-[#C9A227] font-bold">{pack.startingPrice}</span> per person
+              </p>
+            )}
 
           </div>
         </div>
@@ -147,16 +149,16 @@ export default function PackageDetailsClient({ pack }: PackageDetailsClientProps
                   What is Included
                 </h3>
                 <div className="h-[1px] w-12 bg-emerald-600/20 mb-2" />
-                <ul className="space-y-3">
-                  {pack.inclusions.map((inc, i) => (
-                    <li key={i} className="text-xs text-slate-700 flex items-start gap-2 leading-relaxed font-medium">
-                      <span className="w-4 h-4 rounded-full bg-emerald-50 flex items-center justify-center text-white shrink-0 mt-0.5">
-                        <Check className="w-3 h-3" />
-                      </span>
-                      <span>{inc}</span>
-                    </li>
-                  ))}
-                </ul>
+              <ul className="space-y-3">
+                {(pack.inclusions || pack.whatsIncluded || []).map((inc, i) => (
+                  <li key={i} className="text-xs text-slate-700 flex items-start gap-2 leading-relaxed font-medium">
+                    <span className="w-4 h-4 rounded-full bg-emerald-50 flex items-center justify-center text-white shrink-0 mt-0.5">
+                      <Check className="w-3 h-3" />
+                    </span>
+                    <span>{inc}</span>
+                  </li>
+                ))}
+              </ul>
               </div>
 
               {/* Exclusions */}
@@ -166,16 +168,16 @@ export default function PackageDetailsClient({ pack }: PackageDetailsClientProps
                   What is Excluded
                 </h3>
                 <div className="h-[1px] w-12 bg-red-600/20 mb-2" />
-                <ul className="space-y-3">
-                  {pack.exclusions.map((exc, i) => (
-                    <li key={i} className="text-xs text-slate-700 flex items-start gap-2 leading-relaxed font-medium">
-                      <span className="w-4 h-4 rounded-full bg-red-500 flex items-center justify-center text-white shrink-0 mt-0.5">
-                        <X className="w-3 h-3" />
-                      </span>
-                      <span>{exc}</span>
-                    </li>
-                  ))}
-                </ul>
+              <ul className="space-y-3">
+                {(pack.exclusions || []).map((exc, i) => (
+                  <li key={i} className="text-xs text-slate-700 flex items-start gap-2 leading-relaxed font-medium">
+                    <span className="w-4 h-4 rounded-full bg-red-500 flex items-center justify-center text-white shrink-0 mt-0.5">
+                      <X className="w-3 h-3" />
+                    </span>
+                    <span>{exc}</span>
+                  </li>
+                ))}
+              </ul>
               </div>
 
             </div>
@@ -188,7 +190,7 @@ export default function PackageDetailsClient({ pack }: PackageDetailsClientProps
               </h2>
               <div className="h-[1px] w-20 bg-[#8C6A3D]/40 mb-4" />
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                {pack.galleryImages.map((img, i) => (
+                {(pack.galleryImages || []).map((img, i) => (
                   <div key={i} className="relative h-44 rounded-2xl overflow-hidden border border-slate-200 group shadow-md">
                     <Image
                       src={img}
@@ -214,7 +216,7 @@ export default function PackageDetailsClient({ pack }: PackageDetailsClientProps
                 
                 <div className="mt-4 flex flex-col items-center justify-center">
                   <span className="text-slate-500 text-[10px] uppercase font-bold">Starting Price</span>
-                  <span className="font-serif text-3xl text-[#8C6A3D] font-bold tracking-wide">{pack.startingPrice}</span>
+                  <span className="font-serif text-3xl text-[#8C6A3D] font-bold tracking-wide">{pack.startingPrice || "Custom Quote"}</span>
                   <span className="text-[10px] text-slate-500 font-sans mt-0.5">Per Guest (All Inclusive)</span>
                 </div>
               </div>
@@ -223,7 +225,7 @@ export default function PackageDetailsClient({ pack }: PackageDetailsClientProps
               <div className="space-y-4">
                 <div className="flex items-center justify-between text-xs py-1 border-b border-slate-100">
                   <span className="text-slate-500 font-semibold">Duration:</span>
-                  <span className="font-bold text-slate-800">{pack.duration}</span>
+                  <span className="font-bold text-slate-800">{pack.duration || "Customized"}</span>
                 </div>
                 <div className="flex items-center justify-between text-xs py-1 border-b border-slate-100">
                   <span className="text-slate-500 font-semibold">Target Vibe:</span>

@@ -30,8 +30,8 @@ export default function TourPackagesPage() {
           name={pkg.name}
           description={pkg.shortDescription}
           image={pkg.coverImage}
-          duration={pkg.duration}
-          startingPrice={pkg.startingPrice}
+          duration={pkg.duration || 'Customized'}
+          startingPrice={pkg.startingPrice || ''}
           destination={pkg.destination}
           highlights={pkg.highlights}
         />

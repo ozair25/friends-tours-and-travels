@@ -335,7 +335,7 @@ export default function HomePage() {
       <div className="h-20 w-full" />
 
       {/* HERO BANNER SECTION (Matches Airplane + Cloud reference image perfectly) */}
-      <section id="home" className="relative min-h-[95vh] sm:min-h-screen lg:min-h-[110vh] flex flex-col justify-between items-center pt-16 pb-20 sm:pb-24 px-4 z-10 overflow-hidden">
+      <section id="home" className="relative min-h-[85vh] sm:min-h-[90vh] lg:min-h-[95vh] flex flex-col justify-between items-center pt-12 pb-12 sm:pb-16 px-4 z-10 overflow-hidden">
         
         {/* Sky Background with Clouds and Dreamliner plane */}
         <div className="absolute inset-0 z-0">
@@ -384,14 +384,14 @@ export default function HomePage() {
           </div>
 
           {/* Left-side Dark Overlay for Desktop Only */}
-          <div className="hidden sm:block absolute inset-y-0 left-0 w-[45%] z-[2] pointer-events-none" style={{ background: 'linear-gradient(to right, rgba(11, 27, 58, 0.8) 0%, rgba(11, 27, 58, 0.4) 65%, rgba(11, 27, 58, 0) 100%)' }} />
+          <div className="hidden sm:block absolute inset-y-0 left-0 w-[55%] z-[2] pointer-events-none" style={{ background: 'linear-gradient(to right, rgba(11, 27, 58, 0.95) 0%, rgba(11, 27, 58, 0.75) 50%, rgba(11, 27, 58, 0.3) 80%, rgba(11, 27, 58, 0) 100%)' }} />
 
           {/* Mobile View Dark Overlay for superb readability */}
           <div className="block sm:hidden absolute inset-0 bg-gradient-to-b from-[#0B1B3A]/45 via-[#0B1B3A]/20 to-transparent z-[2] pointer-events-none" />
 
           {/* Sophisticated gradient overlay to blend into light cream at bottom */}
-          <div className="absolute inset-x-0 bottom-0 h-64 bg-gradient-to-t from-[#FAF8F5] via-[#FAF8F5]/20 to-transparent z-[2]" />
-          <div className="absolute inset-x-0 bottom-0 h-64 bg-gradient-to-r from-[#FAF8F5]/5 via-transparent to-[#FAF8F5]/5 z-[2]" />
+          <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#FAF8F5] via-[#FAF8F5]/40 to-transparent z-[2]" />
+          <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-r from-[#FAF8F5]/5 via-transparent to-[#FAF8F5]/5 z-[2]" />
         </div>
 
         {/* MOBILE ONLY HERO CONTENT */}
@@ -405,6 +405,7 @@ export default function HomePage() {
               className="flex flex-col items-center"
             >
               <div className="relative flex items-center justify-center">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="https://res.cloudinary.com/dtrvyelcg/image/upload/v1782917857/ChatGPT_Image_Jul_1_2026_08_27_19_PM_wjic7a.png"
                   alt="Friends Tours & Travels Official Logo"
@@ -529,7 +530,7 @@ export default function HomePage() {
                 className="w-full max-w-[280px] px-8 py-3.5 bg-white border border-[#8C6A3D]/30 text-slate-800 font-bold text-xs tracking-widest uppercase rounded-full flex items-center justify-center gap-2 shadow-xl active:scale-95 duration-300 hover:bg-slate-50"
               >
                 <Compass className="w-4 h-4 text-[#8C6A3D]" />
-                CONTACT US
+                CUSTOMIZE MY TRIP
               </a>
             </motion.div>
           </div>
@@ -580,7 +581,12 @@ export default function HomePage() {
               className="flex items-center gap-3 w-full mb-6"
             >
               <div className="h-[1px] w-8 bg-[#C9A227]/80"></div>
-              <span className="text-[10px] md:text-xs tracking-[0.3em] font-semibold text-[#C9A227] uppercase whitespace-nowrap">
+              <span 
+                className="text-[10px] md:text-xs tracking-[0.3em] font-bold text-[#C9A227] uppercase whitespace-nowrap"
+                style={{
+                  textShadow: '0 2px 6px rgba(0,0,0,0.9), 0 1px 2px rgba(0,0,0,0.95)'
+                }}
+              >
                 EXPLORE • <span className="text-white">EXPERIENCE</span> • ENJOY
               </span>
               <div className="h-[1px] w-12 bg-[#C9A227]/80"></div>
@@ -596,7 +602,7 @@ export default function HomePage() {
               <h1 
                 className="font-serif font-extrabold text-white text-5xl md:text-6xl lg:text-[76px] xl:text-[84px] tracking-tight leading-none uppercase"
                 style={{
-                  textShadow: '0 2px 10px rgba(0,0,0,0.5), 0 4px 20px rgba(0,0,0,0.3)',
+                  textShadow: '0 4px 20px rgba(0,0,0,0.85), 0 2px 8px rgba(0,0,0,0.9), 0 1px 3px rgba(0,0,0,0.95)',
                 }}
               >
                 YOUR JOURNEY,
@@ -604,7 +610,7 @@ export default function HomePage() {
               <h2 
                 className="font-script text-[#C9A227] text-5xl md:text-6xl lg:text-[85px] xl:text-[95px] leading-none font-normal block mt-1 lg:mt-2 pl-2 transform -rotate-1"
                 style={{
-                  textShadow: '0 2px 8px rgba(0,0,0,0.5)',
+                  textShadow: '0 4px 15px rgba(0,0,0,0.9), 0 2px 6px rgba(0,0,0,0.95)',
                 }}
               >
                 Our Priority
@@ -616,9 +622,9 @@ export default function HomePage() {
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-gray-100 text-sm md:text-base lg:text-lg leading-relaxed mt-4 md:mt-6 max-w-[500px] font-medium"
+              className="text-white text-sm md:text-base lg:text-lg leading-relaxed mt-4 md:mt-6 max-w-[500px] font-semibold"
               style={{
-                textShadow: '0 1px 3px rgba(0,0,0,0.4)',
+                textShadow: '0 2px 8px rgba(0,0,0,0.95), 0 1px 3px rgba(0,0,0,0.95)',
               }}
             >
               Discover unforgettable destinations with expertly crafted holiday packages across India.
@@ -644,7 +650,7 @@ export default function HomePage() {
                 className="px-8 py-3.5 bg-white border border-[#8C6A3D]/40 text-slate-800 font-bold text-xs tracking-widest uppercase hover:bg-slate-50 hover:scale-105 duration-300 rounded-full flex items-center justify-center gap-2 shadow-xl active:scale-95"
               >
                 <Compass className="w-4 h-4 text-[#8C6A3D]" />
-                PLAN MY TRIP
+                CUSTOMIZE MY TRIP
               </a>
             </motion.div>
 
@@ -653,29 +659,35 @@ export default function HomePage() {
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="flex items-center gap-4 md:gap-6 mt-12 py-3 border-t border-b border-[#C9A227]/25 w-full max-w-[520px]"
+              className="flex items-center justify-between gap-6 md:gap-8 mt-12 py-4 px-6 bg-[#0B1B3A]/85 backdrop-blur-md border border-[#C9A227]/30 rounded-2xl shadow-xl w-full max-w-[520px]"
+              style={{
+                marginRight: '15px',
+                marginLeft: '3px',
+                paddingRight: '26px',
+                paddingLeft: '1px',
+              }}
             >
-              <div className="flex items-center gap-2">
-                <span className="text-base text-[#C9A227]">⭐</span>
+              <div className="flex items-center gap-2.5">
+                <span className="text-base text-[#C9A227] drop-shadow-sm">⭐</span>
                 <div>
-                  <p className="text-xs font-bold text-white leading-none">4.9/5 Rating</p>
-                  <p className="text-[9px] text-slate-200 mt-0.5 leading-none whitespace-nowrap font-medium">Happy Travellers</p>
+                  <p className="text-xs font-bold text-white leading-none tracking-wide">4.9/5 Rating</p>
+                  <p className="text-[9px] text-slate-200 mt-1 leading-none whitespace-nowrap font-medium uppercase tracking-wider">Google Reviews</p>
                 </div>
               </div>
-              <div className="h-6 w-[1px] bg-[#C9A227]/20"></div>
-              <div className="flex items-center gap-2">
-                <span className="text-base text-[#C9A227]">👥</span>
+              <div className="h-8 w-[1px] bg-[#C9A227]/35"></div>
+              <div className="flex items-center gap-2.5">
+                <span className="text-base text-[#C9A227] drop-shadow-sm">👥</span>
                 <div>
-                  <p className="text-xs font-bold text-white leading-none">5000+</p>
-                  <p className="text-[9px] text-slate-200 mt-0.5 leading-none whitespace-nowrap font-medium">Happy Travellers</p>
+                  <p className="text-xs font-bold text-white leading-none tracking-wide">5000+</p>
+                  <p className="text-[9px] text-slate-200 mt-1 leading-none whitespace-nowrap font-medium uppercase tracking-wider">Happy Travellers</p>
                 </div>
               </div>
-              <div className="h-6 w-[1px] bg-[#C9A227]/20"></div>
-              <div className="flex items-center gap-2">
-                <span className="text-base text-[#C9A227]">🛡️</span>
+              <div className="h-8 w-[1px] bg-[#C9A227]/35"></div>
+              <div className="flex items-center gap-2.5">
+                <span className="text-base text-[#C9A227] drop-shadow-sm">🛡️</span>
                 <div>
-                  <p className="text-xs font-bold text-white leading-none">10+ Years</p>
-                  <p className="text-[9px] text-slate-200 mt-0.5 leading-none whitespace-nowrap font-medium">Trusted Experience</p>
+                  <p className="text-xs font-bold text-white leading-none tracking-wide">10+ Years</p>
+                  <p className="text-[9px] text-slate-200 mt-1 leading-none whitespace-nowrap font-medium uppercase tracking-wider">Trusted Experience</p>
                 </div>
               </div>
             </motion.div>
@@ -687,7 +699,7 @@ export default function HomePage() {
       </section>
 
       {/* POPULAR DESTINATIONS SECTION (Matches horizontal 6 circular list precisely) */}
-      <section id="destinations" className="relative pt-24 pb-24 sm:pt-28 bg-gradient-to-b from-[#FAF8F5] to-white border-t border-slate-200 z-20">
+      <section id="destinations" className="relative pt-12 pb-24 sm:pt-16 bg-gradient-to-b from-[#FAF8F5] to-white border-t border-slate-200 z-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           {/* Header Plane Divider */}
@@ -739,11 +751,6 @@ export default function HomePage() {
                 {/* Destination Title Underneath */}
                 <span className="font-serif text-sm tracking-[0.2em] font-bold text-slate-800 group-hover:text-[#8C6A3D] transition-colors duration-300 uppercase">
                   {dest.name}
-                </span>
-                
-                {/* Visual badge highlight */}
-                <span className="text-[10px] font-mono text-[#8C6A3D] mt-1 uppercase tracking-widest font-bold opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300">
-                  {dest.duration}
                 </span>
               </motion.div>
             ))}
@@ -817,23 +824,23 @@ export default function HomePage() {
 
 
 
-      {/* PREMIUM TOUR PACKAGES SECTION (With beautiful cards and tags) */}
+      {/* TRENDING INTERNATIONAL DESTINATIONS SECTION */}
       <section id="packages" className="relative py-24 bg-gradient-to-b from-[#FAF8F5] to-white border-t border-slate-200 z-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="text-center mb-16">
-            <h2 className="font-serif text-3xl sm:text-4xl tracking-[0.2em] font-bold text-[#8C6A3D] uppercase">
-              CELESTIAL TOUR PACKAGES
+            <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl tracking-[0.1em] font-bold text-[#8C6A3D] uppercase">
+              ✨ Trending International Destinations
             </h2>
-            <p className="text-sm text-slate-600 tracking-wider max-w-lg mx-auto mt-3 font-medium">
-              Meticulously planned travel packages with luxury hotels, scenic guides, and comfortable rides already configured.
+            <p className="text-xs sm:text-sm text-slate-600 tracking-wide max-w-3xl mx-auto mt-4 font-medium leading-relaxed">
+              Discover our most popular and curated international holiday destinations. Every trip is fully customized according to your travel dates, budget, and travel preferences. Simply send us your enquiry and our travel experts will prepare the perfect personalized quotation.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {TOUR_PACKAGES.map((pkg, idx) => (
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+            {TOUR_PACKAGES.filter(p => p.type === 'international').map((pkg, idx) => (
               <motion.div
-                key={idx}
+                key={pkg.id}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -841,7 +848,7 @@ export default function HomePage() {
                 className="group bg-white border border-slate-200 rounded-2xl overflow-hidden hover:border-[#8C6A3D]/40 duration-300 flex flex-col justify-between shadow-xl shadow-slate-100"
               >
                 {/* Photo Header */}
-                <div className="relative h-56 w-full overflow-hidden">
+                <div className="relative h-64 w-full overflow-hidden">
                   <Image
                     src={pkg.coverImage}
                     alt={pkg.name}
@@ -852,72 +859,224 @@ export default function HomePage() {
                   {/* Category overlays */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                   
-                  {/* Rating Badge */}
-                  <div className="absolute top-4 left-4 px-3 py-1 bg-white/90 backdrop-blur-md rounded-full border border-[#8C6A3D]/30 flex items-center gap-1 text-xs">
-                    <Star className="w-3.5 h-3.5 text-brand-gold fill-brand-gold" />
-                    <span className="font-semibold text-slate-800">4.8</span>
-                    <span className="text-[10px] text-slate-500">(120)</span>
+                  {/* Badge */}
+                  <div className="absolute top-4 left-4 px-3 py-1 bg-white/95 backdrop-blur-md rounded-full border border-[#8C6A3D]/30 flex items-center gap-1 text-[10px] font-bold text-[#8C6A3D] uppercase tracking-wider shadow-sm">
+                    <span>{pkg.badge}</span>
                   </div>
 
                   {/* Destination Tag */}
                   <div className="absolute bottom-4 right-4 px-3 py-1 bg-[#8C6A3D] text-white text-[9px] font-bold tracking-widest uppercase rounded">
-                    {pkg.destination}
+                    🌍 International
                   </div>
                 </div>
 
                 {/* Card Content */}
                 <div className="p-6 flex-1 flex flex-col justify-between">
                   <div>
-                    {/* Tags row */}
-                    <div className="flex gap-2 mb-3">
-                      <span className="text-[10px] font-mono tracking-wider uppercase text-[#8C6A3D] font-bold">#Luxury</span>
-                      <span className="text-[10px] font-mono tracking-wider uppercase text-[#8C6A3D] font-bold">#Concierge</span>
-                      <span className="text-[10px] font-mono tracking-wider uppercase text-[#8C6A3D] font-bold">#Bespoke</span>
-                    </div>
-
-                    <h3 className="font-serif text-lg font-bold text-[#0B1B3A] leading-snug group-hover:text-[#8C6A3D] duration-300">
+                    <h3 className="font-serif text-2xl font-bold text-[#0B1B3A] leading-snug group-hover:text-[#8C6A3D] duration-300 uppercase tracking-wide">
                       {pkg.name}
                     </h3>
                     
-                    <span className="text-[11px] text-[#8C6A3D] font-bold mt-1 block tracking-wider font-mono uppercase">
-                      {pkg.duration}
-                    </span>
+                    <p className="text-xs text-slate-600 mt-3 leading-relaxed font-medium">
+                      {pkg.shortDescription}
+                    </p>
 
-                    {/* Highlights collapse box */}
-                    <ul className="mt-5 space-y-2">
-                      {pkg.highlights.slice(0, 3).map((h, i) => (
-                        <li key={i} className="text-xs text-slate-700 flex items-start gap-2 font-medium">
-                          <Check className="w-4 h-4 text-[#8C6A3D] shrink-0 mt-0.5" />
-                          <span>{h}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Price Block & Action Button */}
-                  <div className="mt-8 pt-5 border-t border-slate-100 flex items-center justify-between">
-                    <div>
-                      <span className="text-[9px] text-slate-500 uppercase block tracking-widest font-bold">PACKAGE COST</span>
-                      <div className="flex items-center gap-1.5">
-                        <span className="text-xl font-bold font-serif text-[#8C6A3D]">{pkg.startingPrice}</span>
-                        <span className="text-xs text-slate-400 line-through font-light">
-                          {pkg.startingPrice ? `₹${Math.floor(parseInt(pkg.startingPrice.replace(/[^\d]/g, '')) * 1.25).toLocaleString('en-IN')}` : ''}
-                        </span>
+                    {/* Highlights & What's Included */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6 pt-5 border-t border-slate-100">
+                      <div>
+                        <h4 className="text-[10px] font-mono uppercase text-[#8C6A3D] tracking-widest font-bold mb-3 flex items-center gap-1">
+                          <span>✨</span> Destination Highlights
+                        </h4>
+                        <ul className="space-y-1.5">
+                          {pkg.highlights.map((h, i) => (
+                            <li key={i} className="text-xs text-slate-700 flex items-start gap-1.5 font-medium">
+                              <span className="w-1.5 h-1.5 rounded-full bg-[#8C6A3D] shrink-0 mt-2" />
+                              <span>{h}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      
+                      <div>
+                        <h4 className="text-[10px] font-mono uppercase text-[#8C6A3D] tracking-widest font-bold mb-3 flex items-center gap-1">
+                          <span>🧳</span> What&apos;s Included
+                        </h4>
+                        <ul className="space-y-1.5">
+                          {pkg.whatsIncluded.map((item, i) => (
+                            <li key={i} className="text-xs text-slate-700 flex items-start gap-1.5 font-medium">
+                              <Check className="w-3.5 h-3.5 text-[#8C6A3D] shrink-0 mt-0.5" />
+                              <span>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
                       </div>
                     </div>
-                    <Link
-                      href={`/packages/${pkg.id}`}
-                      prefetch={true}
-                      className="px-4 py-2 bg-[#0B1B3A] text-white font-bold text-[10px] tracking-widest uppercase rounded-lg hover:bg-[#8C6A3D] duration-300 inline-flex items-center shadow-md"
+
+                    {/* Best For */}
+                    <div className="mt-6 pt-4 border-t border-slate-100 flex flex-wrap items-center gap-2">
+                      <span className="text-[10px] font-mono uppercase text-[#8C6A3D] tracking-widest font-bold">Best For:</span>
+                      <span className="text-xs text-slate-600 font-semibold bg-slate-50 px-2.5 py-1 rounded-md border border-slate-100">{pkg.bestFor}</span>
+                    </div>
+                  </div>
+
+                  {/* Action Button */}
+                  <div className="mt-8 pt-5 border-t border-slate-100">
+                    <button
+                      onClick={() => handlePrefillEnquiry(pkg.destination)}
+                      className="w-full py-3.5 bg-[#0B1B3A] text-white hover:bg-[#8C6A3D] font-bold text-xs tracking-widest uppercase rounded-xl duration-300 transition-colors shadow-md flex items-center justify-center gap-2 cursor-pointer"
                     >
-                      VIEW DETAILS
-                    </Link>
+                      <span>GET CUSTOMIZED QUOTE</span>
+                      <ChevronRight className="w-4 h-4" />
+                    </button>
                   </div>
                 </div>
-
               </motion.div>
             ))}
           </div>
+
+          {/* DOMESTIC DESTINATIONS SECTION */}
+          <div className="text-center mt-24 mb-16">
+            <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl tracking-[0.1em] font-bold text-[#8C6A3D] uppercase">
+              🇮🇳 Most Loved Domestic Destinations
+            </h2>
+            <p className="text-xs sm:text-sm text-slate-600 tracking-wide max-w-3xl mx-auto mt-4 font-medium leading-relaxed">
+              Explore the breathtaking beauty of India with our handpicked and customized domestic journeys. Crafted with premium stays, comfort travel, and unparalleled local experiences.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+            {TOUR_PACKAGES.filter(p => p.type === 'domestic').map((pkg, idx) => (
+              <motion.div
+                key={pkg.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: idx * 0.1 }}
+                className="group bg-white border border-slate-200 rounded-2xl overflow-hidden hover:border-[#8C6A3D]/40 duration-300 flex flex-col justify-between shadow-xl shadow-slate-100"
+              >
+                {/* Photo Header */}
+                <div className="relative h-64 w-full overflow-hidden">
+                  <Image
+                    src={pkg.coverImage}
+                    alt={pkg.name}
+                    fill
+                    className="object-cover group-hover:scale-105 duration-500"
+                    referrerPolicy="no-referrer"
+                  />
+                  {/* Category overlays */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                  
+                  {/* Badge */}
+                  <div className="absolute top-4 left-4 px-3 py-1 bg-white/95 backdrop-blur-md rounded-full border border-[#8C6A3D]/30 flex items-center gap-1 text-[10px] font-bold text-[#8C6A3D] uppercase tracking-wider shadow-sm">
+                    <span>{pkg.badge}</span>
+                  </div>
+
+                  {/* Destination Tag */}
+                  <div className="absolute bottom-4 right-4 px-3 py-1 bg-[#8C6A3D] text-white text-[9px] font-bold tracking-widest uppercase rounded">
+                    🇮🇳 Domestic
+                  </div>
+                </div>
+
+                {/* Card Content */}
+                <div className="p-6 flex-1 flex flex-col justify-between">
+                  <div>
+                    <h3 className="font-serif text-2xl font-bold text-[#0B1B3A] leading-snug group-hover:text-[#8C6A3D] duration-300 uppercase tracking-wide">
+                      {pkg.name}
+                    </h3>
+                    
+                    <p className="text-xs text-slate-600 mt-3 leading-relaxed font-medium">
+                      {pkg.shortDescription}
+                    </p>
+
+                    {/* Highlights & What's Included */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6 pt-5 border-t border-slate-100">
+                      <div>
+                        <h4 className="text-[10px] font-mono uppercase text-[#8C6A3D] tracking-widest font-bold mb-3 flex items-center gap-1">
+                          <span>✨</span> Destination Highlights
+                        </h4>
+                        <ul className="space-y-1.5">
+                          {pkg.highlights.map((h, i) => (
+                            <li key={i} className="text-xs text-slate-700 flex items-start gap-1.5 font-medium">
+                              <span className="w-1.5 h-1.5 rounded-full bg-[#8C6A3D] shrink-0 mt-2" />
+                              <span>{h}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      
+                      <div>
+                        <h4 className="text-[10px] font-mono uppercase text-[#8C6A3D] tracking-widest font-bold mb-3 flex items-center gap-1">
+                          <span>🧳</span> What&apos;s Included
+                        </h4>
+                        <ul className="space-y-1.5">
+                          {pkg.whatsIncluded.map((item, i) => (
+                            <li key={i} className="text-xs text-slate-700 flex items-start gap-1.5 font-medium">
+                              <Check className="w-3.5 h-3.5 text-[#8C6A3D] shrink-0 mt-0.5" />
+                              <span>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+
+                    {/* Best For */}
+                    <div className="mt-6 pt-4 border-t border-slate-100 flex flex-wrap items-center gap-2">
+                      <span className="text-[10px] font-mono uppercase text-[#8C6A3D] tracking-widest font-bold">Best For:</span>
+                      <span className="text-xs text-slate-600 font-semibold bg-slate-50 px-2.5 py-1 rounded-md border border-slate-100">{pkg.bestFor}</span>
+                    </div>
+                  </div>
+
+                  {/* Action Button */}
+                  <div className="mt-8 pt-5 border-t border-slate-100">
+                    <button
+                      onClick={() => handlePrefillEnquiry(pkg.destination)}
+                      className="w-full py-3.5 bg-[#0B1B3A] text-white hover:bg-[#8C6A3D] font-bold text-xs tracking-widest uppercase rounded-xl duration-300 transition-colors shadow-md flex items-center justify-center gap-2 cursor-pointer"
+                    >
+                      <span>GET CUSTOMIZED QUOTE</span>
+                      <ChevronRight className="w-4 h-4" />
+                    </button>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* PREMIUM MESSAGE BELOW THE SECTION */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="mt-20 p-8 sm:p-12 bg-[#0B1B3A] text-white rounded-3xl relative overflow-hidden shadow-2xl border border-[#C9A227]/30"
+          >
+            {/* Background elements */}
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(201,162,39,0.15),transparent_60%)] pointer-events-none" />
+            <div className="absolute -right-10 -bottom-10 w-40 h-40 bg-[#C9A227]/5 rounded-full blur-3xl pointer-events-none" />
+
+            <div className="relative z-10 max-w-4xl mx-auto text-center flex flex-col items-center">
+              <span className="text-xs font-mono text-[#C9A227] tracking-[0.2em] uppercase font-bold mb-3 block">
+                Bespoke Crafted Itineraries
+              </span>
+              
+              <h3 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-white font-bold mb-4 uppercase">
+                Your Dream Holiday, Designed Just for You
+              </h3>
+
+              <div className="h-[2px] w-24 bg-[#C9A227] mb-6" />
+
+              <p className="text-xs sm:text-sm text-slate-200 max-w-3xl mb-8 leading-relaxed font-medium">
+                Every holiday is uniquely crafted for you. Simply share your destination, travel dates, number of travellers, and budget. Our travel experts will design a personalized itinerary with the best hotels, sightseeing, transfers, and a customized quotation.
+              </p>
+
+              <button
+                onClick={() => handlePrefillEnquiry('')}
+                className="px-8 py-4 bg-[#C9A227] hover:bg-[#8C6A3D] text-white font-bold text-xs tracking-widest uppercase rounded-xl transition-all duration-300 shadow-lg shadow-[#C9A227]/20 flex items-center gap-2.5 cursor-pointer hover:scale-105"
+              >
+                <span>CUSTOMIZE MY TRIP</span>
+                <ChevronRight className="w-4 h-4" />
+              </button>
+            </div>
+          </motion.div>
 
         </div>
       </section>
@@ -1010,7 +1169,7 @@ export default function HomePage() {
                 <span className="text-[#8C6A3D]">FRIENDS TOURS & TRAVELS</span>
               </h2>
               <p className="text-sm text-slate-800 leading-relaxed font-medium">
-                Based in Indore, Madhya Pradesh—India&apos;s cleanest city and commercial hub of MP—we have been serving wanderlust enthusiasts for over 12 years with bespoke, seamless, and deeply memorable travel packages. Our team comprises passion-driven pathfinders, certified destination consultants, and around-the-clock concierges who share one unified goal: **making your holiday unforgettable**.
+                Friends Tours &amp; Travels is an Indore-based travel agency dedicated to creating comfortable, hassle-free, and memorable travel experiences. From family vacations and group tours to religious pilgrimages and international holidays, we offer thoughtfully planned packages, personalized assistance, and reliable service to make every journey enjoyable from start to finish.
               </p>
               <p className="text-sm text-slate-600 leading-relaxed">
                 From high-altitude Himalayan snowy peaks in Manali, down through misty, fragrant Darjeeling tea estates, into the royal sand dune palaces of Jaipur, we build journeys that respect your pacing, fit your lifestyle, and ensure flawless safety.

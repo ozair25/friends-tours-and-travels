@@ -3,217 +3,602 @@ export interface TourPackage {
   name: string;
   destination: string;
   coverImage: string;
-  duration: string;
-  startingPrice: string;
   shortDescription: string;
-  inclusions: string[];
-  exclusions: string[];
   highlights: string[];
-  galleryImages: string[];
-  isFeatured?: boolean;
+  whatsIncluded: string[];
+  bestFor: string;
+  badge: string;
+  type: 'international' | 'domestic';
+  duration?: string;
+  startingPrice?: string;
+  inclusions?: string[];
+  exclusions?: string[];
+  galleryImages?: string[];
 }
 
 export const TOUR_PACKAGES: TourPackage[] = [
   {
-    id: "manali-celestial",
-    name: "Celestial Himalayan Getaway",
-    destination: "Manali",
-    coverImage: "https://images.unsplash.com/photo-1548574505-5e239809ee19?auto=format&fit=crop&w=1200&q=80",
-    duration: "5 Nights / 6 Days",
-    startingPrice: "₹19,999",
-    shortDescription: "Experience the magic of snow-dusted valleys, towering pine forests, and high-altitude luxury in the heart of Himachal Pradesh. Perfectly curated for couples and adventure seekers alike.",
+    id: "vietnam-custom",
+    name: "Vietnam",
+    destination: "Vietnam",
+    coverImage: "https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=1200&q=80",
+    shortDescription: "Experience the perfect blend of vibrant cities, breathtaking landscapes, luxury cruises, ancient towns, and unforgettable cultural experiences across Vietnam.",
     highlights: [
-      "Rohtang Pass Private Snow Excursion",
-      "Sunset Hot Air Balloon Experience over Solang Valley",
-      "Private Bonfire & Riverside Dining under the Stars",
-      "Stay in Premium 4-Star Luxury Alpine Chalets"
+      "Hanoi City Tour",
+      "Ninh Binh (Hoa Lu & Tam Coc)",
+      "Halong Bay Overnight Luxury Cruise",
+      "Da Nang",
+      "Bana Hills",
+      "Golden Bridge",
+      "Fantasy Park",
+      "Marble Mountain",
+      "Coconut Village",
+      "Hoi An Ancient Town",
+      "Lantern Boat Experience"
     ],
-    inclusions: [
-      "Luxury accommodation in 4-star mountain view rooms",
-      "Daily buffet breakfast & chef-crafted gourmet dinners",
-      "Private AC Sedan with local expert chauffeur for all sightseeing",
-      "All necessary Rohtang Pass permit fees and green tax",
-      "Complimentary adventure voucher (Paragliding/River Rafting)",
-      "Warm welcome drinks upon arrival"
+    whatsIncluded: [
+      "Airport Transfers",
+      "Private Air-conditioned Transportation",
+      "Guided Sightseeing Tours",
+      "Entrance Tickets",
+      "Luxury Cruise Experience",
+      "Daily Breakfast",
+      "Selected Lunch & Dinner",
+      "English Speaking Guide"
     ],
-    exclusions: [
-      "Airfare or train ticket to/from Chandigarh/Delhi",
-      "Lunch meals & personal laundry or beverage expenses",
-      "Any entry tickets to monuments not mentioned in highlights",
-      "Travel insurance & emergency evacuation charges"
-    ],
-    galleryImages: [
-      "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=600&q=80",
-      "https://images.unsplash.com/photo-1605649487212-47bdab064df7?auto=format&fit=crop&w=600&q=80",
-      "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=600&q=80"
-    ],
-    isFeatured: true
+    bestFor: "Couples • Families • Honeymoon • Friends",
+    badge: "🔥 Trending",
+    type: "international"
   },
   {
-    id: "goa-coastal-luxury",
-    name: "Coastal Luxury & Private Yacht Cruise",
-    destination: "Goa",
+    id: "singapore-custom",
+    name: "Singapore",
+    destination: "Singapore",
+    coverImage: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=1200&q=80",
+    shortDescription: "Discover Singapore's iconic skyline, world-famous attractions, thrilling theme parks, and unforgettable waterfront experiences.",
+    highlights: [
+      "Singapore City Tour",
+      "Marina Bay Sands Observation Deck",
+      "Gardens by the Bay",
+      "Flower Dome",
+      "Cloud Forest",
+      "Sentosa Island",
+      "Cable Car Ride",
+      "Madame Tussauds",
+      "Wings of Time Show",
+      "Universal Studios Singapore"
+    ],
+    whatsIncluded: [
+      "Airport Transfers",
+      "Private Transfers",
+      "Guided City Tour",
+      "Attraction Entry Tickets",
+      "Comfortable Accommodation",
+      "Daily Breakfast"
+    ],
+    bestFor: "Families • Couples • Kids • First-Time International Travellers",
+    badge: "⭐ Most Loved",
+    type: "international"
+  },
+  {
+    id: "bali-custom",
+    name: "Bali",
+    destination: "Bali",
+    coverImage: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1200&q=80",
+    shortDescription: "Relax in tropical paradise with beautiful beaches, luxury villas, vibrant nightlife, and unforgettable Balinese experiences.",
+    highlights: [
+      "Seminyak",
+      "Luxury Pool Villa Stay",
+      "Beach Experiences",
+      "Bali Nightlife",
+      "Shopping Streets",
+      "Romantic Getaway",
+      "Premium Resorts",
+      "Cultural Experiences"
+    ],
+    whatsIncluded: [
+      "Hotel Accommodation",
+      "Airport Transfers",
+      "Comfortable Transportation",
+      "Daily Breakfast",
+      "Customizable Sightseeing"
+    ],
+    bestFor: "Honeymoon • Couples • Luxury Vacation • Friends",
+    badge: "❤️ Honeymoon Favourite",
+    type: "international"
+  },
+  {
+    id: "baku-custom",
+    name: "Baku (Azerbaijan)",
+    destination: "Baku",
+    coverImage: "https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?auto=format&fit=crop&w=1200&q=80",
+    shortDescription: "Explore the Land of Fire with stunning modern architecture, ancient UNESCO heritage, mountain adventures, and unique natural wonders.",
+    highlights: [
+      "Baku City Tour",
+      "Heydar Aliyev Center",
+      "Baku Boulevard",
+      "Old City (UNESCO)",
+      "Maiden Tower",
+      "Flame Temple (Ateshgah)",
+      "Yanar Dag (Fire Mountain)",
+      "Shahdag Mountain Resort",
+      "Cable Car Ride",
+      "Gobustan Rock Art",
+      "Mud Volcano Region",
+      "Deniz Mall"
+    ],
+    whatsIncluded: [
+      "Airport Transfers",
+      "Hotel Accommodation",
+      "Daily Breakfast",
+      "Guided Sightseeing",
+      "Entrance Tickets",
+      "English Speaking Guide",
+      "Comfortable Transportation"
+    ],
+    bestFor: "Families • Adventure Lovers • Culture Enthusiasts • Groups",
+    badge: "✨ Hidden Gem",
+    type: "international"
+  },
+  {
+    id: "dubai-custom",
+    name: "Dubai",
+    destination: "Dubai",
+    coverImage: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1200&q=80",
+    shortDescription: "Indulge in futuristic architectures, record-breaking monuments, ultra-luxury shopping, and thrilling desert adventures in the jewel of the Middle East.",
+    highlights: [
+      "Burj Khalifa",
+      "Dubai Mall",
+      "Desert Safari",
+      "Dhow Cruise Dinner",
+      "Dubai Marina",
+      "Palm Jumeirah",
+      "Atlantis",
+      "Museum of the Future",
+      "Miracle Garden",
+      "Global Village",
+      "Luxury Shopping",
+      "Ferrari World (Optional)"
+    ],
+    whatsIncluded: [
+      "Premium Hotel Accommodation",
+      "Dubai Airport Transfers",
+      "Guided City Tour with Burj Khalifa Tickets",
+      "Desert Safari with BBQ Dinner & Entertainment",
+      "Marina Dhow Cruise Dinner",
+      "Visa Assistance & Insurance Support"
+    ],
+    bestFor: "Luxury • Honeymoon • Families • Shopping",
+    badge: "Luxury Escape",
+    type: "international"
+  },
+  {
+    id: "bhutan-custom",
+    name: "Bhutan",
+    destination: "Bhutan",
+    coverImage: "https://images.unsplash.com/photo-1548685913049-fe6574340a49?auto=format&fit=crop&w=1200&q=80",
+    shortDescription: "Unveil the mystical charm of the Last Shangri-La. Wander through peaceful dzongs, green valleys, and pristine prayer-flag draped mountain passes.",
+    highlights: [
+      "Paro",
+      "Thimphu",
+      "Tiger's Nest Monastery",
+      "Buddha Dordenma",
+      "Dochula Pass",
+      "Punakha Dzong",
+      "Himalayan Landscapes",
+      "Traditional Villages",
+      "Prayer Flags",
+      "Local Culture"
+    ],
+    whatsIncluded: [
+      "Premium Bhutanese Resorts",
+      "Private Chauffeur Driven Vehicle",
+      "All Inner-Line Permits & Entry Fees",
+      "English-Speaking Bhutanese Guide",
+      "Daily Breakfast & Dinner",
+      "Tiger's Nest Hiking Assistance"
+    ],
+    bestFor: "Nature • Spiritual • Couples",
+    badge: "Peaceful Paradise",
+    type: "international"
+  },
+  {
+    id: "nepal-custom",
+    name: "Nepal",
+    destination: "Nepal",
+    coverImage: "https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=80",
+    shortDescription: "Embark on an epic journey to the rooftop of the world. Experience majestic Himalayan backdrops, vibrant spiritual temples, and lush lake valleys.",
+    highlights: [
+      "Kathmandu",
+      "Pashupatinath Temple",
+      "Boudhanath Stupa",
+      "Pokhara",
+      "Phewa Lake",
+      "Sarangkot Sunrise",
+      "Davis Falls",
+      "Gupteshwor Cave",
+      "Mountain Views",
+      "Adventure Activities"
+    ],
+    whatsIncluded: [
+      "Premium Accommodation",
+      "AC Private Transfers",
+      "Guided Sightseeing in Kathmandu & Pokhara",
+      "Sarangkot Hill Sunrise Trip",
+      "Boat Ride at Phewa Lake",
+      "Entrance Fees & Permits"
+    ],
+    bestFor: "Families • Adventure • Pilgrimage",
+    badge: "Himalayan Adventure",
+    type: "international"
+  },
+  {
+    id: "moscow-custom",
+    name: "Moscow (Russia)",
+    destination: "Moscow",
+    coverImage: "https://images.unsplash.com/photo-1520106212299-d99c443e4568?auto=format&fit=crop&w=1200&q=80",
+    shortDescription: "Immerse yourself in spectacular Imperial history, iconic red brick spires, legendary underground palaces, and the unmatched grandeur of Russia's cultural heart.",
+    highlights: [
+      "Red Square",
+      "Kremlin",
+      "Saint Basil's Cathedral",
+      "Moscow Metro",
+      "Bolshoi Theatre",
+      "Sparrow Hills",
+      "Gorky Park",
+      "Arbat Street",
+      "River Cruise",
+      "Luxury Shopping"
+    ],
+    whatsIncluded: [
+      "Luxury Hotel Accommodation",
+      "Airport Pick-up & Drop-off",
+      "Kremlin & Metro Station Guided Tours",
+      "Saint Basil's Entrance Tickets",
+      "Premium River Cruise on Moskva River",
+      "Visa Invitation Letter Support"
+    ],
+    bestFor: "History • Luxury • Couples",
+    badge: "European Experience",
+    type: "international"
+  },
+  {
+    id: "thailand-custom",
+    name: "Thailand",
+    destination: "Thailand",
     coverImage: "https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=1200&q=80",
-    duration: "4 Nights / 5 Days",
-    startingPrice: "₹15,499",
-    shortDescription: "Sun-kissed sandy shores, swaying palm groves, and old-world Portuguese charm meet high-end beachfront leisure. Cruise the azure sea on an exclusive private yacht at sunset.",
+    shortDescription: "Savor the ultimate tropical escape with stunning golden temples, exotic floating markets, sapphire waters, and the legendary warm hospitality of the Land of Smiles.",
     highlights: [
-      "2-Hour Private Sunset Yacht Cruise with Music & Fine Wine",
-      "Beachfront 5-Star Boutique Resort with Private Beach Access",
-      "Guided Heritage Walk through Fontainhas (Latin Quarters)",
-      "Scuba Diving introductory pool training and ocean session"
+      "Bangkok",
+      "Pattaya",
+      "Coral Island",
+      "Floating Market",
+      "Alcazar Show",
+      "Safari World",
+      "Marine Park",
+      "Temple Tours",
+      "Nightlife",
+      "Shopping"
     ],
-    inclusions: [
-      "Luxury resort stay in beach-view suite",
-      "Full daily breakfast spread & premium evening appetizers",
-      "Airport pickup and drop-off in premium SUV",
-      "Private sunset cruise with appetizers and drinks",
-      "All sightseeing transfers in private air-conditioned vehicle",
-      "Complimentary water sports voucher"
+    whatsIncluded: [
+      "Hotel Accommodation",
+      "Airport Transfers",
+      "Private Sightseeing Tours",
+      "Daily Breakfast",
+      "Coral Island Speedboat Tour with Lunch",
+      "Temple Tour Entry Tickets"
     ],
-    exclusions: [
-      "Meals not specified in inclusions (Lunches & Dinners)",
-      "Water sports activities outside of the complimentary voucher",
-      "Personal expenses, tips, and portage charges"
-    ],
-    galleryImages: [
-      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80",
-      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=600&q=80",
-      "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=600&q=80"
-    ],
-    isFeatured: true
+    bestFor: "Couples • Families • Friends • Shoppers",
+    badge: "Beach Favourite",
+    type: "international"
   },
   {
-    id: "darjeeling-vintage",
-    name: "Vintage Tea Gardens & Kanchenjunga Sunrise",
-    destination: "Darjeeling",
-    coverImage: "https://images.unsplash.com/photo-1618083707368-b3823daa2726?auto=format&fit=crop&w=1200&q=80",
-    duration: "4 Nights / 5 Days",
-    startingPrice: "₹17,800",
-    shortDescription: "Immerse yourself in the colonial heritage of the Queen of Hill Stations. Sip premium aromatic tea amidst rolling emerald gardens and watch the golden sun rise over majestic Mt. Kanchenjunga.",
+    id: "malaysia-custom",
+    name: "Malaysia",
+    destination: "Malaysia",
+    coverImage: "https://images.unsplash.com/photo-1538332576187-03361248a89a?auto=format&fit=crop&w=1200&q=80",
+    shortDescription: "Experience 'Truly Asia' with towering futuristic skylines, cooling mountain resorts, legendary historical caves, and incredibly diverse culinary traditions.",
     highlights: [
-      "Chauffeur-Driven Sunrise Excursion to Tiger Hill",
-      "Joyride on the historic UNESCO World Heritage Toy Train",
-      "Private Tea Sommelier session and estate harvest walk",
-      "Stay in an elegant British colonial-era Heritage Hotel"
+      "Kuala Lumpur",
+      "Petronas Towers",
+      "Genting Highlands",
+      "Batu Caves",
+      "Sunway Lagoon",
+      "Cable Car",
+      "Shopping",
+      "City Tours"
     ],
-    inclusions: [
-      "Deluxe heritage accommodation with scenic Himalayan views",
-      "Daily breakfast and customized dinner menus",
-      "Private local transfers in comfortable mountain SUVs",
-      "UNESCO Toy Train joyride tickets",
-      "Premium tea garden tasting and entry tickets",
-      "All state entry taxes, toll fees, and driver allowances"
+    whatsIncluded: [
+      "Hotel Accommodation",
+      "Airport & City Transfers",
+      "Daily Breakfast",
+      "Genting Highlands Day Tour",
+      "Cable Car Ride Tickets",
+      "Kuala Lumpur Guided City Tour"
     ],
-    exclusions: [
-      "Airfare or Train tickets to Bagdogra / NJP",
-      "Personal shopping and lunch meals",
-      "Any additional activities or monument entry fees"
-    ],
-    galleryImages: [
-      "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=600&q=80",
-      "https://images.unsplash.com/photo-1618083707368-b3823daa2726?auto=format&fit=crop&w=600&q=80",
-      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80"
-    ],
-    isFeatured: true
+    bestFor: "Families • Couples • Shoppers • Kids",
+    badge: "Family Favourite",
+    type: "international"
   },
   {
-    id: "jaipur-royal-heritage",
-    name: "Royal Heritage of the Pink City",
-    destination: "Jaipur",
-    coverImage: "https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=1200&q=80",
-    duration: "4 Nights / 5 Days",
-    startingPrice: "₹16,500",
-    shortDescription: "Step back into the golden age of royalty in Rajasthan. Tour majestic red sandstone forts, explore shimmering palaces, shop for artisanal crafts, and dine like royalty.",
+    id: "maldives-custom",
+    name: "Maldives",
+    destination: "Maldives",
+    coverImage: "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=1200&q=80",
+    shortDescription: "Escape to private overwater villas, untouched white-sand rings, and impossibly clear turquoise lagoons tailored for pure romantic indulgence.",
     highlights: [
-      "Royal Elephant Safari & guided tour at Amer Fort",
-      "Exclusive access to the private residential quarters of City Palace",
-      "Authentic multi-course Rajasthani Thali culinary evening",
-      "Sunset hot air balloon flight overlooking the ancient fort ramparts"
+      "Water Villas",
+      "White Sand Beaches",
+      "Snorkelling",
+      "Scuba Diving",
+      "Luxury Resorts",
+      "Sunset Cruise",
+      "Candlelight Dinner",
+      "Crystal Clear Lagoons"
     ],
-    inclusions: [
-      "Palace hotel heritage stay with royal hospitality",
-      "Daily gourmet breakfasts and fine dining dinners",
-      "Exclusive private AC Sedan with professional guide-driver",
-      "All monument entry tickets and elephant safari tickets",
-      "Block-print textile making workshop with master artisans"
+    whatsIncluded: [
+      "Luxury Overwater Villa Stay",
+      "Speedboat or Seaplane Transfers",
+      "All Inclusive Daily Meals & Drinks",
+      "Sunset Cruise & Fishing Tour",
+      "Snorkelling Equipment",
+      "Romantic Candlelight Beach Dinner"
     ],
-    exclusions: [
-      "Flight/rail tickets to Jaipur",
-      "Camera fees inside monuments",
-      "Personal expenses such as laundry, phone calls, and tips"
-    ],
-    galleryImages: [
-      "https://images.unsplash.com/photo-1603262110263-fb0112e7cc33?auto=format&fit=crop&w=600&q=80",
-      "https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=600&q=80",
-      "https://images.unsplash.com/photo-1548574505-5e239809ee19?auto=format&fit=crop&w=600&q=80"
-    ],
-    isFeatured: false
+    bestFor: "Honeymoon • Couples • Luxury Seekers • Water Sports",
+    badge: "Honeymoon Paradise",
+    type: "international"
   },
   {
-    id: "ooty-emerald-retreat",
-    name: "Emerald Hills & Nilgiri Toy Train Voyage",
-    destination: "Ooty",
+    id: "leh-ladakh-custom",
+    name: "Leh Ladakh",
+    destination: "Leh Ladakh",
+    coverImage: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&q=80",
+    shortDescription: "Discover the breathtaking beauty of Ladakh with high mountain passes, crystal-clear lakes, monasteries, desert valleys, and unforgettable Himalayan adventures.",
+    highlights: [
+      "Leh City",
+      "Shanti Stupa",
+      "Leh Palace",
+      "Hall of Fame Museum",
+      "Magnetic Hill",
+      "Sangam (Indus & Zanskar Confluence)",
+      "Gurudwara Pathar Sahib",
+      "Khardung La Pass",
+      "Nubra Valley",
+      "Hunder Sand Dunes",
+      "Double-Humped Camel Ride",
+      "Turtuk Village",
+      "Pangong Lake",
+      "Chang La Pass",
+      "Hemis Monastery",
+      "Thiksey Monastery",
+      "Shey Palace",
+      "Rancho School (3 Idiots)"
+    ],
+    whatsIncluded: [
+      "Airport Transfers",
+      "Comfortable Transportation",
+      "Hotel Accommodation",
+      "Breakfast & Dinner",
+      "Guided Sightseeing",
+      "Inner Line Permits",
+      "Oxygen Cylinder Support",
+      "All Toll & Parking Charges"
+    ],
+    bestFor: "Adventure Lovers • Nature Enthusiasts • Families • Couples • Road Trip Lovers",
+    badge: "🏔️ Adventure Favourite",
+    type: "domestic"
+  },
+  {
+    id: "char-dham-custom",
+    name: "Char Dham Yatra",
+    destination: "Char Dham",
+    coverImage: "https://images.unsplash.com/photo-1627894483216-2138af692e32?auto=format&fit=crop&w=1200&q=80",
+    shortDescription: "Embark on the sacred Char Dham pilgrimage through the Himalayas, visiting India's four most revered shrines with comfortable accommodations and guided travel.",
+    highlights: [
+      "Haridwar",
+      "Har Ki Pauri Ganga Aarti",
+      "Yamunotri Temple",
+      "Gangotri Temple",
+      "Kedarnath Temple",
+      "Helicopter Darshan (Available)",
+      "Badrinath Temple",
+      "Mana Village",
+      "Bhim Pul",
+      "Vyas Gufa",
+      "Vishwanath Temple",
+      "Harsil Valley",
+      "Rudraprayag",
+      "Devprayag",
+      "Rishikesh",
+      "Himalayan Scenic Drive"
+    ],
+    whatsIncluded: [
+      "Hotel Accommodation",
+      "Comfortable Transportation",
+      "Breakfast & Dinner",
+      "Sightseeing",
+      "Registration Assistance",
+      "Helicopter Package (where applicable)",
+      "Pilgrimage Assistance"
+    ],
+    bestFor: "Families • Senior Citizens • Pilgrims • Spiritual Travelers",
+    badge: "🛕 Spiritual Journey",
+    type: "domestic"
+  },
+  {
+    id: "kashmir-custom",
+    name: "Kashmir",
+    destination: "Kashmir",
+    coverImage: "https://images.unsplash.com/photo-1566228015668-4c45dbc4e2f5?auto=format&fit=crop&w=1200&q=80",
+    shortDescription: "Step into Paradise on Earth. Cruise through the tranquil waters of Dal Lake, walk in lush Mughal Gardens, and stand in awe of the snow-kissed meadows of Gulmarg.",
+    highlights: [
+      "Srinagar",
+      "Dal Lake",
+      "Shikara Ride",
+      "Gulmarg",
+      "Gondola Ride",
+      "Pahalgam",
+      "Sonmarg",
+      "Mughal Gardens",
+      "Houseboat Stay",
+      "Snow Activities"
+    ],
+    whatsIncluded: [
+      "Luxury Houseboat Stay",
+      "Premium Resort Accommodation",
+      "Private Sightseeing Cab",
+      "Daily Breakfast & Dinner",
+      "Complimentary Shikara Ride",
+      "Gulmarg & Pahalgam Excursions"
+    ],
+    bestFor: "Families • Honeymoon • Nature",
+    badge: "Heaven on Earth",
+    type: "domestic"
+  },
+  {
+    id: "andaman-custom",
+    name: "Andaman Islands",
+    destination: "Andaman",
+    coverImage: "https://images.unsplash.com/photo-1589308078059-be1415eab4c3?auto=format&fit=crop&w=1200&q=80",
+    shortDescription: "Relax on award-winning white-sand shores, explore ancient historical cellular structures, and dive into vibrant reef systems on beautiful secluded islands.",
+    highlights: [
+      "Cellular Jail",
+      "Radhanagar Beach",
+      "Havelock Island",
+      "Neil Island",
+      "Scuba Diving",
+      "Snorkelling",
+      "Glass Bottom Boat",
+      "Sunset Beaches",
+      "Water Sports"
+    ],
+    whatsIncluded: [
+      "Beach Resort Accommodation",
+      "Inter-Island Ferry Tickets (Private Cruise)",
+      "All Sightseeing & Beach Transfers",
+      "Daily Breakfast",
+      "Cellular Jail Light & Sound Show Tickets",
+      "Complimentary Snorkelling Session"
+    ],
+    bestFor: "Couples • Honeymoon • Adventure",
+    badge: "Island Escape",
+    type: "domestic"
+  },
+  {
+    id: "manali-custom",
+    name: "Manali",
+    destination: "Manali",
+    coverImage: "https://images.unsplash.com/photo-1605649487212-47bdab064df7?auto=format&fit=crop&w=1200&q=80",
+    shortDescription: "Experience a classic Himalayan escape with high-octane adventure sports, snow-covered valleys, local spiritual temples, and panoramic alpine views.",
+    highlights: [
+      "Solang Valley",
+      "Atal Tunnel",
+      "Sissu",
+      "Rohtang Pass",
+      "Hidimba Temple",
+      "Mall Road",
+      "River Rafting",
+      "Paragliding",
+      "Snow Activities"
+    ],
+    whatsIncluded: [
+      "Hotel Accommodation",
+      "Private Sightseeing Vehicle",
+      "Daily Breakfast & Dinner",
+      "Atal Tunnel & Sissu Day Trip",
+      "Solang Valley Adventure Sightseeing",
+      "Local Guided Tour"
+    ],
+    bestFor: "Adventure • Couples • Families",
+    badge: "Mountain Adventure",
+    type: "domestic"
+  },
+  {
+    id: "goa-custom",
+    name: "Goa",
+    destination: "Goa",
+    coverImage: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80",
+    shortDescription: "Unwind along vibrant sandy beaches, legendary Portuguese historic forts, thrilling watersport bays, and the sunset cruise party of India's favorite coastline.",
+    highlights: [
+      "North Goa",
+      "South Goa",
+      "Baga Beach",
+      "Calangute Beach",
+      "Dudhsagar Falls",
+      "Fort Aguada",
+      "Cruise Party",
+      "Water Sports",
+      "Nightlife",
+      "Beach Shacks"
+    ],
+    whatsIncluded: [
+      "Premium Beachside Hotel",
+      "Airport/Station Transfers",
+      "Daily Breakfast",
+      "North & South Goa Tours",
+      "Mandovi River Sunset Cruise Tickets",
+      "Private Sightseeing Vehicle"
+    ],
+    bestFor: "Friends • Honeymoon • Family",
+    badge: "Beach Paradise",
+    type: "domestic"
+  },
+  {
+    id: "kerala-custom",
+    name: "Kerala",
+    destination: "Kerala",
     coverImage: "https://images.unsplash.com/photo-1593693397690-362cb9666fc2?auto=format&fit=crop&w=1200&q=80",
-    duration: "3 Nights / 4 Days",
-    startingPrice: "₹12,999",
-    shortDescription: "Relax in the serene southern hills of Ooty. Stroll through mist-covered cardamom and tea estates, boat on pristine emerald lakes, and enjoy homemade chocolate tasting tours.",
+    shortDescription: "Float through serene coconut-lined backwaters, hike through lush rolling tea gardens in Munnar, and witness breathtaking traditional performing arts.",
     highlights: [
-      "UNESCO-listed Nilgiri Mountain Toy Train journey through pine valleys",
-      "Private sunset boating tour on Pykara Lake with gourmet picnic basket",
-      "Specialty chocolate-making class at the Tea & Chocolate Museum",
-      "Trek to Doddabetta Peak, the highest summit in South India"
+      "Munnar",
+      "Thekkady",
+      "Alleppey Houseboat",
+      "Kumarakom",
+      "Tea Gardens",
+      "Periyar Wildlife",
+      "Backwaters",
+      "Spice Plantations",
+      "Kathakali Show"
     ],
-    inclusions: [
-      "Boutique tea-estate resort stay with private deck",
-      "Daily breakfast and organic farm-to-table dinners",
-      "All transfers in private air-conditioned SUV with guide",
-      "First-class Nilgiri Toy Train tickets",
-      "Chocolate museum entry & chocolate-making workshop"
+    whatsIncluded: [
+      "Premium Resort & Houseboat Stays",
+      "Private AC Vehicle for Entire Trip",
+      "Daily Breakfast (All Meals in Houseboat)",
+      "Munnar Tea Gardens Tour",
+      "Periyar Wildlife Sanctuary Visit",
+      "Spice Plantation Tour & Spice Kit"
     ],
-    exclusions: [
-      "Airfare to Coimbatore or train to Mettupalayam",
-      "Lunch meals & additional boating fees",
-      "Tips, laundry, and items of a personal nature"
-    ],
-    galleryImages: [
-      "https://images.unsplash.com/photo-1593693397690-362cb9666fc2?auto=format&fit=crop&w=600&q=80",
-      "https://images.unsplash.com/photo-1541256996761-85df2efaa164?auto=format&fit=crop&w=600&q=80",
-      "https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=600&q=80"
-    ],
-    isFeatured: false
+    bestFor: "Families • Couples • Nature",
+    badge: "God's Own Country",
+    type: "domestic"
   },
   {
-    id: "uttrakhand-sacred-peaks",
-    name: "Sacred Peaks & Wilderness Expedition",
-    destination: "Uttarakhand",
-    coverImage: "https://images.unsplash.com/photo-1618083707368-b3823daa2726?auto=format&fit=crop&w=1200&q=80",
-    duration: "5 Nights / 6 Days",
-    startingPrice: "₹18,500",
-    shortDescription: "A magnificent blend of spirituality and nature. Spot tigers in Jim Corbett, experience a sacred Ganga Aarti in Rishikesh, and relax in lakeside Nainital cottages.",
+    id: "meghalaya-custom",
+    name: "Meghalaya",
+    destination: "Meghalaya",
+    coverImage: "https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&w=1200&q=80",
+    shortDescription: "Explore the misty Abode of the Clouds. Trek down to stunning double-decker living root bridges, sail on glass-clear rivers, and stand under towering waterfalls.",
     highlights: [
-      "Exclusive VIP Seating for the evening Ganga Aarti in Haridwar",
-      "Private Open-Top Jeep Wildlife Safari inside Jim Corbett National Park",
-      "Luxury Yacht Cruise on the emerald waters of Naini Lake",
-      "Adrenaline-pumping white water rafting in Rishikesh with expert guides"
+      "Shillong",
+      "Cherrapunji",
+      "Living Root Bridges",
+      "Dawki River",
+      "Mawlynnong Village",
+      "Elephant Falls",
+      "Laitlum Canyon",
+      "Caves",
+      "Waterfalls"
     ],
-    inclusions: [
-      "Stay in scenic lakeside boutique cottages & jungle lodges",
-      "Daily breakfast and dinner (Traditional Garhwali meals included)",
-      "All intercity sightseeing in private air-conditioned high-ground Sedan",
-      "Jim Corbett entry permits & open-top safari booking",
-      "Professional certified river rafting guide and top-tier gear"
+    whatsIncluded: [
+      "Premium Boutique Hotel Stays",
+      "Private Sightseeing Cab",
+      "Daily Breakfast",
+      "Guided Trek to Double Decker Root Bridge",
+      "Dawki River Boating Experience",
+      "Cherrapunji Waterfalls Sightseeing"
     ],
-    exclusions: [
-      "Airfare to Dehradun or train tickets to Kathgodam",
-      "Any adventure activities beyond Rishikesh rafting",
-      "Lunch meals, personal expenses, and service tips"
-    ],
-    galleryImages: [
-      "https://images.unsplash.com/photo-1618083707368-b3823daa2726?auto=format&fit=crop&w=600&q=80",
-      "https://images.unsplash.com/photo-1575550959106-5a7defe28b56?auto=format&fit=crop&w=600&q=80",
-      "https://images.unsplash.com/photo-1548574505-5e239809ee19?auto=format&fit=crop&w=600&q=80"
-    ],
-    isFeatured: false
+    bestFor: "Nature • Adventure • Photography",
+    badge: "Hidden Paradise",
+    type: "domestic"
   }
 ];

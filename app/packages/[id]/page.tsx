@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 
   return generateMetadataHelper({
-    title: `${pack.name} (${pack.duration}) - ${pack.destination} Tour`,
+    title: `${pack.name} (${pack.duration || 'Customized'}) - ${pack.destination} Tour`,
     description: pack.shortDescription,
     path: `/packages/${pack.id}`,
     ogImage: pack.coverImage,
@@ -62,8 +62,8 @@ export default async function Page({ params }: PageProps) {
         name={pack.name}
         description={pack.shortDescription}
         image={pack.coverImage}
-        duration={pack.duration}
-        startingPrice={pack.startingPrice}
+        duration={pack.duration || 'Customized'}
+        startingPrice={pack.startingPrice || ''}
         destination={pack.destination}
         highlights={pack.highlights}
       />
