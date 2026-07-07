@@ -4,7 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'motion/react';
-import { Compass, Award, ShieldCheck, Heart, Sparkles, Map, Users, ArrowRight, Star, Quote } from 'lucide-react';
+import { Compass, Award, ShieldCheck, Heart, Sparkles, Map, Users, ArrowRight, Star, Quote, User } from 'lucide-react';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import { TESTIMONIALS } from '../../data/testimonials';
@@ -48,7 +48,19 @@ export default function AboutClient() {
       <Navbar />
 
       {/* HERO BANNER SECTION */}
-      <section className="relative pt-36 pb-16 bg-gradient-to-b from-[#EFECE6]/40 via-[#FAF8F5] to-[#FAF8F5] flex flex-col items-center justify-center text-center px-4">
+      <section className="relative pt-36 pb-16 bg-gradient-to-b from-[#EFECE6]/40 via-[#FAF8F5] to-[#FAF8F5] flex flex-col items-center justify-center text-center px-4 overflow-hidden">
+        {/* Ambient background image with higher opacity */}
+        <div className="absolute inset-0 z-0 opacity-70 pointer-events-none">
+          <Image
+            src="https://res.cloudinary.com/dtrvyelcg/image/upload/v1783374599/%EF%B8%8F_Ready_to_explore_the_world__Follow_Nomadic_Matt_for_tips_on_affordable_and_authentic_travel_experiences_Don_t_let_your_budget_hold_you_back_from_your_travel_dreams__TravelSmart_BudgetTravel_1_x4etzx.jpg"
+            alt="Legacy & Values Background"
+            fill
+            className="object-cover"
+            referrerPolicy="no-referrer"
+          />
+          <div className="absolute inset-0 bg-[#FAF8F5]/40 mix-blend-multiply" />
+        </div>
+
         {/* Subtle decorative sky glow */}
         <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#C9A227]/5 rounded-full filter blur-[120px] pointer-events-none" />
 
@@ -58,7 +70,7 @@ export default function AboutClient() {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#EFECE6] border border-[#C9A227]/30 mb-6"
+            className="flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#EFECE6]/90 border border-[#C9A227]/45 mb-6 shadow-md backdrop-blur-sm"
           >
             <Compass className="w-4 h-4 text-[#8C6A3D] animate-spin-slow" />
             <span className="text-[10px] font-mono tracking-[0.2em] text-[#0B1B3A] uppercase font-bold">
@@ -71,7 +83,8 @@ export default function AboutClient() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="font-serif text-4xl sm:text-5xl md:text-6xl text-[#0B1B3A] font-bold tracking-tight uppercase leading-none"
+            className="font-serif text-4xl sm:text-5xl md:text-6xl text-[#0B1B3A] font-bold tracking-tight uppercase leading-none text-center"
+            style={{ textShadow: '0 2px 4px rgba(255, 255, 255, 0.95), 0 4px 12px rgba(255, 255, 255, 0.85), 0 0 20px rgba(255, 255, 255, 0.6)' }}
           >
             OUR LEGACY & <span className="text-[#8C6A3D] italic font-serif">VALUES</span>
           </motion.h1>
@@ -92,7 +105,8 @@ export default function AboutClient() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xs sm:text-sm text-slate-700 font-medium mt-6 max-w-xl leading-relaxed font-sans"
+            className="text-xs sm:text-sm text-[#0B1B3A] font-bold mt-6 max-w-xl leading-relaxed font-sans text-center"
+            style={{ textShadow: '0 1px 3px rgba(255, 255, 255, 0.95), 0 2px 8px rgba(255, 255, 255, 0.9)' }}
           >
             Friends Tours & Travels was built on a simple promise: to replace standardized commercial vacations with deeply personalized, stress-free luxury adventures.
           </motion.p>
@@ -248,21 +262,9 @@ export default function AboutClient() {
 
               {/* User Identity Info */}
               <div className="flex items-center gap-4 pt-6 border-t border-slate-100">
-                {test.image ? (
-                  <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-[#8C6A3D]/40">
-                    <Image
-                      src={test.image}
-                      alt={test.name}
-                      fill
-                      className="object-cover"
-                      referrerPolicy="no-referrer"
-                    />
-                  </div>
-                ) : (
-                  <div className="w-12 h-12 rounded-full bg-[#EFECE6] border-2 border-[#8C6A3D]/40 flex items-center justify-center text-xs font-serif font-bold text-[#8C6A3D]">
-                    {test.name.substring(0, 2).toUpperCase()}
-                  </div>
-                )}
+                <div className="w-12 h-12 rounded-full bg-[#EFECE6]/40 border border-[#8C6A3D]/30 flex items-center justify-center text-[#8C6A3D]">
+                  <User className="w-5 h-5" />
+                </div>
                 <div>
                   <h4 className="font-serif text-sm font-bold text-[#0B1B3A] tracking-wide">{test.name}</h4>
                   <span className="text-[10px] text-[#8C6A3D] font-mono tracking-wider uppercase">{test.city}</span>

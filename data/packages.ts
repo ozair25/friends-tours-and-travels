@@ -21,7 +21,7 @@ export const TOUR_PACKAGES: TourPackage[] = [
     id: "vietnam-custom",
     name: "Vietnam",
     destination: "Vietnam",
-    coverImage: "https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=1200&q=80",
+    coverImage: "https://res.cloudinary.com/dtrvyelcg/image/upload/v1783371318/Ba_Na_Hills_py5cqt.jpg",
     shortDescription: "Experience the perfect blend of vibrant cities, breathtaking landscapes, luxury cruises, ancient towns, and unforgettable cultural experiences across Vietnam.",
     highlights: [
       "Hanoi City Tour",
@@ -54,7 +54,7 @@ export const TOUR_PACKAGES: TourPackage[] = [
     id: "singapore-custom",
     name: "Singapore",
     destination: "Singapore",
-    coverImage: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=1200&q=80",
+    coverImage: "https://res.cloudinary.com/dtrvyelcg/image/upload/v1783371317/Best_Time_to_Visit_Singapore__Weather_Seasons_Travel_Tips_avad9v.jpg",
     shortDescription: "Discover Singapore's iconic skyline, world-famous attractions, thrilling theme parks, and unforgettable waterfront experiences.",
     highlights: [
       "Singapore City Tour",
@@ -111,7 +111,7 @@ export const TOUR_PACKAGES: TourPackage[] = [
     id: "baku-custom",
     name: "Baku (Azerbaijan)",
     destination: "Baku",
-    coverImage: "https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?auto=format&fit=crop&w=1200&q=80",
+    coverImage: "https://res.cloudinary.com/dtrvyelcg/image/upload/v1783341964/Baku_Azerbaycan_z1yc1f.jpg",
     shortDescription: "Explore the Land of Fire with stunning modern architecture, ancient UNESCO heritage, mountain adventures, and unique natural wonders.",
     highlights: [
       "Baku City Tour",
@@ -176,7 +176,7 @@ export const TOUR_PACKAGES: TourPackage[] = [
     id: "bhutan-custom",
     name: "Bhutan",
     destination: "Bhutan",
-    coverImage: "https://images.unsplash.com/photo-1548685913049-fe6574340a49?auto=format&fit=crop&w=1200&q=80",
+    coverImage: "https://res.cloudinary.com/dtrvyelcg/image/upload/v1783341964/Bhutan_Holidays_rayapx.jpg",
     shortDescription: "Unveil the mystical charm of the Last Shangri-La. Wander through peaceful dzongs, green valleys, and pristine prayer-flag draped mountain passes.",
     highlights: [
       "Paro",
@@ -206,7 +206,7 @@ export const TOUR_PACKAGES: TourPackage[] = [
     id: "nepal-custom",
     name: "Nepal",
     destination: "Nepal",
-    coverImage: "https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=80",
+    coverImage: "https://res.cloudinary.com/dtrvyelcg/image/upload/v1783341963/This_Himalayan_trek_climbs_to_17_598_feet_where_ordinary_travelers_transform_Lonely_Planet_ranks____jduycb.jpg",
     shortDescription: "Embark on an epic journey to the rooftop of the world. Experience majestic Himalayan backdrops, vibrant spiritual temples, and lush lake valleys.",
     highlights: [
       "Kathmandu",
@@ -236,7 +236,7 @@ export const TOUR_PACKAGES: TourPackage[] = [
     id: "moscow-custom",
     name: "Moscow (Russia)",
     destination: "Moscow",
-    coverImage: "https://images.unsplash.com/photo-1520106212299-d99c443e4568?auto=format&fit=crop&w=1200&q=80",
+    coverImage: "https://res.cloudinary.com/dtrvyelcg/image/upload/v1783371318/The_Kremlin_in_Moscow_Russia_etzsoq.jpg",
     shortDescription: "Immerse yourself in spectacular Imperial history, iconic red brick spires, legendary underground palaces, and the unmatched grandeur of Russia's cultural heart.",
     highlights: [
       "Red Square",
@@ -296,7 +296,7 @@ export const TOUR_PACKAGES: TourPackage[] = [
     id: "malaysia-custom",
     name: "Malaysia",
     destination: "Malaysia",
-    coverImage: "https://images.unsplash.com/photo-1538332576187-03361248a89a?auto=format&fit=crop&w=1200&q=80",
+    coverImage: "https://res.cloudinary.com/dtrvyelcg/image/upload/v1783341964/16_Of_The_Very_Best_Places_To_See_In_Kuala_Lumpur_Malaysia_-_Hand_Luggage_Only_-_Travel_Food_Photography_Blog_mc1ydb.jpg",
     shortDescription: "Experience 'Truly Asia' with towering futuristic skylines, cooling mountain resorts, legendary historical caves, and incredibly diverse culinary traditions.",
     highlights: [
       "Kuala Lumpur",
@@ -392,7 +392,7 @@ export const TOUR_PACKAGES: TourPackage[] = [
     id: "char-dham-custom",
     name: "Char Dham Yatra",
     destination: "Char Dham",
-    coverImage: "https://images.unsplash.com/photo-1627894483216-2138af692e32?auto=format&fit=crop&w=1200&q=80",
+    coverImage: "https://res.cloudinary.com/dtrvyelcg/image/upload/v1783341963/download_8_wklik3.jpg",
     shortDescription: "Embark on the sacred Char Dham pilgrimage through the Himalayas, visiting India's four most revered shrines with comfortable accommodations and guided travel.",
     highlights: [
       "Haridwar",
@@ -429,7 +429,7 @@ export const TOUR_PACKAGES: TourPackage[] = [
     id: "kashmir-custom",
     name: "Kashmir",
     destination: "Kashmir",
-    coverImage: "https://images.unsplash.com/photo-1566228015668-4c45dbc4e2f5?auto=format&fit=crop&w=1200&q=80",
+    coverImage: "https://res.cloudinary.com/dtrvyelcg/image/upload/v1783341963/8-Day_Jammu_and_Kashmir_Tour___Lelife_Holidays_vbyslw.jpg",
     shortDescription: "Step into Paradise on Earth. Cruise through the tranquil waters of Dal Lake, walk in lush Mughal Gardens, and stand in awe of the snow-kissed meadows of Gulmarg.",
     highlights: [
       "Srinagar",
@@ -459,7 +459,7 @@ export const TOUR_PACKAGES: TourPackage[] = [
     id: "andaman-custom",
     name: "Andaman Islands",
     destination: "Andaman",
-    coverImage: "https://images.unsplash.com/photo-1589308078059-be1415eab4c3?auto=format&fit=crop&w=1200&q=80",
+    coverImage: "https://res.cloudinary.com/dtrvyelcg/image/upload/v1783371049/Andaman_Islands_Tour_Packages_i5cusy.jpg",
     shortDescription: "Relax on award-winning white-sand shores, explore ancient historical cellular structures, and dive into vibrant reef systems on beautiful secluded islands.",
     highlights: [
       "Cellular Jail",
@@ -488,7 +488,7 @@ export const TOUR_PACKAGES: TourPackage[] = [
     id: "manali-custom",
     name: "Manali",
     destination: "Manali",
-    coverImage: "https://images.unsplash.com/photo-1605649487212-47bdab064df7?auto=format&fit=crop&w=1200&q=80",
+    coverImage: "https://res.cloudinary.com/dtrvyelcg/image/upload/v1783371050/Manali_lujsri.jpg",
     shortDescription: "Experience a classic Himalayan escape with high-octane adventure sports, snow-covered valleys, local spiritual temples, and panoramic alpine views.",
     highlights: [
       "Solang Valley",
@@ -517,7 +517,7 @@ export const TOUR_PACKAGES: TourPackage[] = [
     id: "goa-custom",
     name: "Goa",
     destination: "Goa",
-    coverImage: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80",
+    coverImage: "https://res.cloudinary.com/dtrvyelcg/image/upload/v1783371050/calangute_beach_lymbzp.jpg",
     shortDescription: "Unwind along vibrant sandy beaches, legendary Portuguese historic forts, thrilling watersport bays, and the sunset cruise party of India's favorite coastline.",
     highlights: [
       "North Goa",
@@ -576,7 +576,7 @@ export const TOUR_PACKAGES: TourPackage[] = [
     id: "meghalaya-custom",
     name: "Meghalaya",
     destination: "Meghalaya",
-    coverImage: "https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&w=1200&q=80",
+    coverImage: "https://res.cloudinary.com/dtrvyelcg/image/upload/v1783371050/Meghalaya_-_Scotland_of_the_East_ttjny4.jpg",
     shortDescription: "Explore the misty Abode of the Clouds. Trek down to stunning double-decker living root bridges, sail on glass-clear rivers, and stand under towering waterfalls.",
     highlights: [
       "Shillong",

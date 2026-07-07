@@ -64,7 +64,19 @@ export default function GalleryClient() {
       <Navbar />
 
       {/* HERO BANNER SECTION */}
-      <section className="relative pt-36 pb-16 bg-gradient-to-b from-[#EFECE6]/40 via-[#FAF8F5] to-[#FAF8F5] flex flex-col items-center justify-center text-center px-4">
+      <section className="relative pt-36 pb-16 bg-gradient-to-b from-[#EFECE6]/40 via-[#FAF8F5] to-[#FAF8F5] flex flex-col items-center justify-center text-center px-4 overflow-hidden">
+        {/* Ambient background image with higher opacity */}
+        <div className="absolute inset-0 z-0 opacity-70 pointer-events-none">
+          <Image
+            src="https://res.cloudinary.com/dtrvyelcg/image/upload/v1783374253/travel_world_traveltheworld_aeshetic_travelaesthetic_a2glqf.webp"
+            alt="Wanderlust Gallery Page Background"
+            fill
+            className="object-cover"
+            referrerPolicy="no-referrer"
+          />
+          <div className="absolute inset-0 bg-[#FAF8F5]/40 mix-blend-multiply" />
+        </div>
+
         {/* Subtle decorative sky glow */}
         <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#C9A227]/10 rounded-full filter blur-[120px] pointer-events-none" />
 
@@ -74,7 +86,7 @@ export default function GalleryClient() {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/80 border border-[#C9A227]/40 mb-6 backdrop-blur-sm"
+            className="flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FAF8F5]/90 border border-[#C9A227]/50 mb-6 shadow-md backdrop-blur-sm"
           >
             <Compass className="w-4 h-4 text-[#8C6A3D] animate-spin-slow" />
             <span className="text-[10px] font-mono tracking-[0.2em] text-[#0B1B3A] uppercase font-bold">
@@ -87,7 +99,8 @@ export default function GalleryClient() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="font-serif text-4xl sm:text-5xl md:text-6xl text-[#0B1B3A] font-bold tracking-tight uppercase leading-none"
+            className="font-serif text-4xl sm:text-5xl md:text-6xl text-[#0B1B3A] font-bold tracking-tight uppercase leading-none text-center"
+            style={{ textShadow: '0 2px 4px rgba(255, 255, 255, 0.95), 0 4px 12px rgba(255, 255, 255, 0.85), 0 0 20px rgba(255, 255, 255, 0.6)' }}
           >
             WANDERLUST <span className="text-[#8C6A3D] italic font-serif">GALLERY</span>
           </motion.h1>
@@ -108,7 +121,8 @@ export default function GalleryClient() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xs sm:text-sm text-slate-700 mt-6 max-w-xl leading-relaxed font-sans font-medium"
+            className="text-xs sm:text-sm text-[#0B1B3A] mt-6 max-w-xl leading-relaxed font-sans font-bold text-center"
+            style={{ textShadow: '0 1px 3px rgba(255, 255, 255, 0.95), 0 2px 8px rgba(255, 255, 255, 0.9)' }}
           >
             Step into the magnificent realms we have unlocked for travelers. Filter photos by destination, explore raw details, and feel the visual essence of your next luxury holiday.
           </motion.p>

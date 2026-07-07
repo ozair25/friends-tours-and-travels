@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import React from 'react';
+import Image from 'next/image';
 import { Compass, Phone, Mail, MapPin, Clock, MessageSquare } from 'lucide-react';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
@@ -40,7 +41,19 @@ export default function ContactUsPage() {
         <Navbar />
 
         {/* HERO BANNER SECTION */}
-        <section className="relative pt-36 pb-16 bg-gradient-to-b from-[#EFECE6]/40 via-[#FAF8F5] to-[#FAF8F5] flex flex-col items-center justify-center text-center px-4">
+        <section className="relative pt-36 pb-16 bg-gradient-to-b from-[#EFECE6]/40 via-[#FAF8F5] to-[#FAF8F5] flex flex-col items-center justify-center text-center px-4 overflow-hidden">
+          {/* Ambient background image with low opacity */}
+          <div className="absolute inset-0 z-0 opacity-35 pointer-events-none">
+            <Image
+              src="https://res.cloudinary.com/dtrvyelcg/image/upload/v1783373097/download_xnm2xo.webp"
+              alt="Get in touch Background"
+              fill
+              className="object-cover"
+              referrerPolicy="no-referrer"
+            />
+            <div className="absolute inset-0 bg-[#FAF8F5]/30 mix-blend-multiply" />
+          </div>
+
           {/* Subtle decorative sky glow */}
           <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#C9A227]/5 rounded-full filter blur-[120px] pointer-events-none" />
 

@@ -70,7 +70,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
   },
   {
     id: "jaipur-3",
-    url: "https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=800&q=80",
+    url: "https://res.cloudinary.com/dtrvyelcg/image/upload/v1783372596/Royal_palace_aozd0s.jpg",
     title: "Royal Courtyards",
     destination: "Jaipur",
     description: "The symmetric pillars and golden gates inside City Palace."
@@ -93,7 +93,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
   },
   {
     id: "darjeeling-3",
-    url: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80",
+    url: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80",
     title: "Kanchenjunga Glow",
     destination: "Darjeeling",
     description: "First morning light painting the snowy peaks of Mt. Kanchenjunga."
@@ -116,7 +116,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
   },
   {
     id: "ooty-3",
-    url: "https://images.unsplash.com/photo-1541256996761-85df2efaa164?auto=format&fit=crop&w=800&q=80",
+    url: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=800&q=80",
     title: "Emerald Pykara",
     destination: "Ooty",
     description: "Lush green pine-wood shores framing the serene Pykara Lake."
@@ -125,14 +125,14 @@ export const GALLERY_ITEMS: GalleryItem[] = [
   // Uttarakhand Gallery
   {
     id: "uttar-1",
-    url: "https://images.unsplash.com/photo-1618083707368-b3823daa2726?auto=format&fit=crop&w=800&q=80",
+    url: "https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?auto=format&fit=crop&w=800&q=80",
     title: "Rishikesh Hanging Bridge",
     destination: "Uttarakhand",
     description: "The famous Lakshman Jhula suspension bridge over the emerald Ganges."
   },
   {
     id: "uttar-2",
-    url: "https://images.unsplash.com/photo-1618083707368-b3823daa2726?auto=format&fit=crop&w=800&q=80",
+    url: "https://res.cloudinary.com/dtrvyelcg/image/upload/v1783372596/Ganga_Arti_In_Haridwar_tknlj6.jpg",
     title: "Sacred Aarti",
     destination: "Uttarakhand",
     description: "Hundreds of glowing lamps during the Ganga Aarti ceremony at Har Ki Pauri."

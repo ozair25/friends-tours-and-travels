@@ -133,9 +133,9 @@ export default function Footer() {
             © {new Date().getFullYear()} Friends Tours & Travels. All Rights Reserved. Luxury travel concierge.
           </p>
           <div className="flex gap-6">
-            <Link href="/contact" prefetch={true} className="text-[10px] text-gray-300 hover:text-[#C9A227] duration-300">About Agency</Link>
-            <Link href="/contact" prefetch={true} className="text-[10px] text-gray-300 hover:text-[#C9A227] duration-300">Privacy Policy</Link>
-            <Link href="/contact" prefetch={true} className="text-[10px] text-gray-300 hover:text-[#C9A227] duration-300">Terms of Service</Link>
+            <Link href="/about" prefetch={true} className="text-[10px] text-gray-300 hover:text-[#C9A227] duration-300">About Agency</Link>
+            <Link href="/privacy-policy" prefetch={true} className="text-[10px] text-gray-300 hover:text-[#C9A227] duration-300">Privacy Policy</Link>
+            <Link href="/terms-of-service" prefetch={true} className="text-[10px] text-gray-300 hover:text-[#C9A227] duration-300">Terms of Service</Link>
           </div>
         </div>
 

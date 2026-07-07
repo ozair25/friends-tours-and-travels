@@ -1082,14 +1082,26 @@ export default function HomePage() {
       </section>
 
       {/* GALLERY SECTION */}
-      <section id="gallery" className="py-24 bg-gradient-to-b from-[#EFECE6] to-[#FAF8F5] border-t border-slate-200 z-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="gallery" className="relative py-24 bg-gradient-to-b from-[#EFECE6] to-[#FAF8F5] border-t border-slate-200 z-20 overflow-hidden">
+        {/* Ambient background image with higher opacity */}
+        <div className="absolute inset-0 z-0 opacity-70 pointer-events-none">
+          <Image
+            src="https://res.cloudinary.com/dtrvyelcg/image/upload/v1783374253/travel_world_traveltheworld_aeshetic_travelaesthetic_a2glqf.webp"
+            alt="Wanderlust Gallery Background"
+            fill
+            className="object-cover"
+            referrerPolicy="no-referrer"
+          />
+          <div className="absolute inset-0 bg-[#FAF8F5]/40 mix-blend-multiply" />
+        </div>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          <div className="text-center mb-16">
-            <h2 className="font-serif text-3xl sm:text-4xl tracking-[0.2em] font-bold text-[#8C6A3D] uppercase">
+          <div className="text-center mb-16 max-w-2xl mx-auto">
+            <h2 className="font-serif text-3xl sm:text-4xl tracking-[0.2em] font-bold text-[#8C6A3D] uppercase" style={{ textShadow: '0 2px 4px rgba(255, 255, 255, 0.95), 0 4px 12px rgba(255, 255, 255, 0.85), 0 0 20px rgba(255, 255, 255, 0.6)' }}>
               WANDERLUST GALLERY
             </h2>
-            <p className="text-sm text-slate-600 tracking-wider max-w-lg mx-auto mt-3 font-medium">
+            <p className="text-sm text-[#0B1B3A] tracking-wider max-w-lg mx-auto mt-3 font-bold" style={{ textShadow: '0 1px 3px rgba(255, 255, 255, 0.95), 0 2px 8px rgba(255, 255, 255, 0.9)' }}>
               A visually stunning glance into the unforgettable memories captured by our beloved travellers.
             </p>
           </div>
@@ -1101,7 +1113,7 @@ export default function HomePage() {
               { title: "Darjeeling Tea Harvest", src: "https://images.unsplash.com/photo-1618083707368-b3823daa2726?auto=format&fit=crop&w=600&q=80", span: "col-span-1" },
               { title: "Misty Ooty Lake", src: "https://images.unsplash.com/photo-1541256996761-85df2efaa164?auto=format&fit=crop&w=600&q=80", span: "col-span-1" },
               { title: "Amer Fort Sunset", src: "https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=600&q=80", span: "col-span-1" },
-              { title: "Uttarakhand Sacred Temple", src: "https://images.unsplash.com/photo-1618083707368-b3823daa2726?auto=format&fit=crop&w=600&q=80", span: "col-span-2" }
+              { title: "Uttarakhand Sacred Temple", src: "https://images.unsplash.com/photo-1590001155093-a3c66ab0c3ff?auto=format&fit=crop&w=600&q=80", span: "col-span-2" }
             ].map((img, idx) => (
               <div 
                 key={idx} 

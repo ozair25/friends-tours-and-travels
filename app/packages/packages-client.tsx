@@ -117,10 +117,24 @@ export default function PackagesClient() {
 
       <Navbar />
 
-      {/* HERO SECTION */}
-      <section className="relative pt-36 pb-20 bg-gradient-to-b from-[#EFECE6]/40 via-[#FAF8F5] to-[#FAF8F5] flex flex-col items-center justify-center text-center px-4">
-        {/* Subtle decorative sky glow */}
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#C9A227]/5 rounded-full filter blur-[120px] pointer-events-none" />
+      {/* HERO SECTION WITH LUXURY BACKGROUND IMAGE */}
+      <section className="relative pt-44 pb-32 overflow-hidden flex flex-col items-center justify-center text-center px-4 min-h-[450px]">
+        {/* Immersive Background Image */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="https://res.cloudinary.com/dtrvyelcg/image/upload/v1783341964/group_of_people_on_peak_mountain_climbing_helping_vl5wzu.jpg"
+            alt="Friends Tours and Travels team planning trips on peak mountain"
+            fill
+            className="object-cover object-center scale-105 select-none pointer-events-none"
+            priority
+            referrerPolicy="no-referrer"
+          />
+          {/* Premium editorial gradient overlays for high typography contrast */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0B1B3A]/85 via-[#0B1B3A]/50 to-[#0B1B3A]/30" />
+          <div className="absolute inset-0 bg-[#0B1B3A]/20 mix-blend-multiply" />
+          {/* Smooth transition fade to page background at the very bottom */}
+          <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#FAF8F5] via-[#FAF8F5]/80 to-transparent pointer-events-none" />
+        </div>
 
         <div className="relative z-10 max-w-4xl mx-auto flex flex-col items-center">
           {/* Tagline Badge */}
@@ -128,10 +142,10 @@ export default function PackagesClient() {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#EFECE6] border border-[#C9A227]/30 mb-6"
+            className="flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-[#C9A227]/40 mb-6"
           >
-            <Compass className="w-4 h-4 text-[#8C6A3D] animate-spin-slow" />
-            <span className="text-[10px] font-mono tracking-[0.2em] text-[#0B1B3A] uppercase font-bold">
+            <Compass className="w-4 h-4 text-[#C9A227] animate-spin-slow" />
+            <span className="text-[10px] font-mono tracking-[0.2em] text-[#F7F1E1] uppercase font-bold">
               BESPOKE DESTINATIONS
             </span>
           </motion.div>
@@ -141,9 +155,9 @@ export default function PackagesClient() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="font-serif text-3xl sm:text-4xl md:text-5xl text-[#0B1B3A] font-bold tracking-tight uppercase leading-none"
+            className="font-serif text-3xl sm:text-4xl md:text-5xl text-white font-bold tracking-tight uppercase leading-none"
           >
-            CURATED <span className="text-[#8C6A3D] italic font-serif">INSPIRATIONS</span>
+            CURATED <span className="text-[#C9A227] italic font-serif">INSPIRATIONS</span>
           </motion.h1>
 
           {/* Slogan ornament */}
@@ -153,16 +167,16 @@ export default function PackagesClient() {
             transition={{ duration: 1, delay: 0.3 }}
             className="flex items-center gap-3 mt-6 w-48 sm:w-64"
           >
-            <div className="h-[1px] flex-1 bg-[#8C6A3D]/40"></div>
-            <div className="w-2 h-2 rounded-full bg-[#8C6A3D]"></div>
-            <div className="h-[1px] flex-1 bg-[#8C6A3D]/40"></div>
+            <div className="h-[1px] flex-1 bg-[#C9A227]/40"></div>
+            <div className="w-2 h-2 rounded-full bg-[#C9A227]"></div>
+            <div className="h-[1px] flex-1 bg-[#C9A227]/40"></div>
           </motion.div>
 
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xs sm:text-sm text-slate-700 mt-6 max-w-2xl leading-relaxed font-sans font-medium"
+            className="text-xs sm:text-sm text-slate-100 mt-6 max-w-2xl leading-relaxed font-sans font-medium drop-shadow-sm"
           >
             Discover our trending domestic and international destinations. Every trip is fully customized according to your travel dates, budget, and travel preferences. Simply send us your enquiry and our travel experts will prepare the perfect personalized quotation.
           </motion.p>
