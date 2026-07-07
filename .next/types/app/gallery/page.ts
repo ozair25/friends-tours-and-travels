@@ -1,4 +1,4 @@
-// File: C:\Users\Sayed Ozair\Downloads\friends-tours-and-travels\app\gallery\page.tsx
+// File: C:\Users\Sayed Ozair\Downloads\friends-tours-and-travels(FINAL)\app\gallery\page.tsx
 import * as entry from '../../../../app/gallery/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
