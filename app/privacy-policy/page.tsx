@@ -2,15 +2,24 @@ import { Metadata } from 'next';
 import React from 'react';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
+import { generateMetadataHelper } from '../../lib/seo';
+import BreadcrumbSchema from '../../components/seo/BreadcrumbSchema';
 
-export const metadata: Metadata = {
-  title: 'Privacy Policy | Friends Tours & Travels',
+export const metadata: Metadata = generateMetadataHelper({
+  title: 'Privacy Policy',
   description: 'Learn how Friends Tours & Travels collects, protects, and handles your personal information with the utmost care and confidentiality.',
-};
+  path: '/privacy-policy',
+});
 
 export default function PrivacyPolicyPage() {
+  const breadcrumbItems = [
+    { name: 'Home', url: '/' },
+    { name: 'Privacy Policy', url: '/privacy-policy' },
+  ];
+
   return (
-    <main className="min-relative min-h-screen bg-[#FAF8F5] text-[#0B1B3A]">
+    <main className="relative min-h-screen bg-[#FAF8F5] text-[#0B1B3A]">
+      <BreadcrumbSchema items={breadcrumbItems} />
       <Navbar />
 
       {/* Hero Header */}

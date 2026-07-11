@@ -132,6 +132,29 @@ export default function AboutClient() {
               Today, we operate as a full-service boutique travel agency. We combine cutting-edge technology (like our customized planning suites) with old-school hospitality. We ensure that you bypass the tourism traps, enjoy exclusive VIP amenities, and explore India exactly the way you want.
             </p>
 
+            {/* Ownership & Verified Status Card */}
+            <div className="p-5 bg-white border border-[#8C6A3D]/25 rounded-2xl shadow-md space-y-4 sm:space-y-0 sm:flex sm:items-center sm:justify-between sm:gap-4 mt-6">
+              <div>
+                <p className="text-[9px] text-[#8C6A3D] font-bold uppercase tracking-widest font-mono">Agency Ownership</p>
+                <p className="text-sm font-bold text-[#0B1B3A] font-serif uppercase tracking-wide">LP Agrawal</p>
+                <p className="text-[10px] text-slate-500 font-medium">Founder & Chief Curator</p>
+              </div>
+              <div className="hidden sm:block h-12 w-[1px] bg-slate-200" />
+              <div className="flex items-center gap-2.5">
+                <div className="w-8 h-8 rounded-full bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-600 font-bold text-sm shrink-0">
+                  ✓
+                </div>
+                <div>
+                  <p className="text-[9px] text-[#8C6A3D] font-bold uppercase tracking-widest font-mono flex items-center gap-1.5 leading-none mb-1">
+                    GST Verified Organization
+                  </p>
+                  <p className="text-[11px] font-sans font-bold text-[#0B1B3A] leading-none">
+                    Government Registered Agency
+                  </p>
+                </div>
+              </div>
+            </div>
+
             <div className="pt-4">
               <Link 
                 href="/packages"

@@ -9,7 +9,7 @@ export default function LocalBusinessSchema() {
     '@id': `${SITE_URL}/#localbusiness`,
     name: DEFAULT_SEO.siteName,
     image: `${SITE_URL}/images/og-default.jpg`,
-    telePhone: DEFAULT_SEO.contact.phone,
+    telephone: DEFAULT_SEO.contact.phone,
     email: DEFAULT_SEO.contact.email,
     url: SITE_URL,
     priceRange: '$$$',

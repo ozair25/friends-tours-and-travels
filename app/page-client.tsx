@@ -36,6 +36,8 @@ import {
 } from 'lucide-react';
 import { DESTINATIONS, Destination } from '../lib/destinations';
 import { TOUR_PACKAGES } from '../data/packages';
+import FAQSchema from '../components/seo/FAQSchema';
+import TravelInsights from '../components/TravelInsights';
 
 export default function HomePage() {
   const router = useRouter();
@@ -49,6 +51,7 @@ export default function HomePage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const [selectedDestination, setSelectedDestination] = useState<Destination | null>(null);
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
   
   // Custom Trip Enquiry State
   const [enquiryModalOpen, setEnquiryModalOpen] = useState(false);
@@ -68,7 +71,7 @@ export default function HomePage() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY + 150;
-      const sections = ['home', 'destinations', 'packages', 'about', 'contact'];
+      const sections = ['home', 'destinations', 'packages', 'insights', 'about', 'contact'];
       
       for (const section of sections) {
         const el = document.getElementById(section);
@@ -239,6 +242,7 @@ export default function HomePage() {
               { label: 'HOME', path: '#home', id: 'home' },
               { label: 'POPULAR DESTINATIONS', path: '#destinations', id: 'destinations' },
               { label: 'TOUR PACKAGES', path: '/packages', id: 'packages' },
+              { label: 'TRAVEL INSIGHTS', path: '#insights', id: 'insights' },
               { label: 'GALLERY', path: '/gallery', id: 'gallery' },
               { label: 'ABOUT US', path: '/about', id: 'about' },
               { label: 'CONTACT US', path: '/contact', id: 'contact' },
@@ -263,10 +267,17 @@ export default function HomePage() {
           </nav>
 
           {/* Header Action Buttons */}
-          <div className="hidden md:flex items-center gap-4">
+          <div className="hidden md:flex items-center gap-5 lg:gap-6">
+            <a 
+              href="mailto:lpagrawal48@gmail.com" 
+              className="text-xs text-white hover:text-[#C9A227] duration-300 flex items-center gap-1.5 font-extrabold tracking-widest uppercase"
+            >
+              <Mail className="w-4 h-4 text-white" strokeWidth={3.5} />
+              lpagrawal48@gmail.com
+            </a>
             <button 
               onClick={() => handlePrefillEnquiry('')}
-              className="px-5 py-2.5 rounded-full border border-[#C9A227] bg-[#C9A227] text-[#0B1B3A] text-xs font-bold tracking-wider hover:bg-transparent hover:text-white hover:border-white active:scale-95 duration-300 flex items-center gap-2 group shadow-lg"
+              className="px-5 py-2.5 rounded-full border border-[#C9A227] bg-[#C9A227] text-[#0B1B3A] text-xs font-bold tracking-wider hover:bg-transparent hover:text-white hover:border-white active:scale-95 duration-300 flex items-center gap-2 group shadow-lg shrink-0"
             >
               ENQUIRE NOW
               <ChevronRight className="w-4 h-4 group-hover:translate-x-1 duration-300" />
@@ -295,6 +306,7 @@ export default function HomePage() {
                 { label: 'Home', path: '#home', id: 'home' },
                 { label: 'Popular Destinations', path: '#destinations', id: 'destinations' },
                 { label: 'Tour Packages', path: '/packages', id: 'packages' },
+                { label: 'Travel Insights', path: '#insights', id: 'insights' },
                 { label: 'Gallery', path: '/gallery', id: 'gallery' },
                 { label: 'About Us', path: '/about', id: 'about' },
                 { label: 'Contact Us', path: '/contact', id: 'contact' },
@@ -326,6 +338,15 @@ export default function HomePage() {
                 ENQUIRE NOW
                 <ChevronRight className="w-4 h-4" />
               </button>
+              <div className="mt-2 pt-4 border-t border-white/10 flex flex-col items-center gap-2">
+                <a 
+                  href="mailto:lpagrawal48@gmail.com" 
+                  className="text-xs text-white hover:text-[#C9A227] duration-300 flex items-center gap-2 font-extrabold tracking-widest uppercase"
+                >
+                  <Mail className="w-4 h-4 text-white" strokeWidth={3.5} />
+                  lpagrawal48@gmail.com
+                </a>
+              </div>
             </motion.div>
           )}
         </AnimatePresence>
@@ -405,20 +426,25 @@ export default function HomePage() {
               className="flex flex-col items-center"
             >
               <div className="relative flex items-center justify-center">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   src="https://res.cloudinary.com/dtrvyelcg/image/upload/v1782917857/ChatGPT_Image_Jul_1_2026_08_27_19_PM_wjic7a.png"
                   alt="Friends Tours & Travels Official Logo"
+                  width={276}
+                  height={306}
                   className="w-[276px] h-[306px] object-contain -translate-y-[10%] translate-x-[15px]"
                   style={{
                     marginLeft: '85px',
                     marginTop: '-148px',
                   }}
-                  onError={(e) => {
-                    e.currentTarget.style.display = 'none';
+                  onError={() => {
+                    const img = document.getElementById('logo-mobile-image');
+                    if (img) img.style.display = 'none';
                     const fallback = document.getElementById('logo-fallback-mobile');
                     if (fallback) fallback.classList.remove('hidden');
                   }}
+                  id="logo-mobile-image"
+                  priority
+                  referrerPolicy="no-referrer"
                 />
                 <div 
                   id="logo-fallback-mobile" 
@@ -479,22 +505,22 @@ export default function HomePage() {
                   zIndex: -1,
                 }}
               />
-              <h1 
+              <p 
                 className="font-serif font-extrabold text-white text-[36px] tracking-tight leading-none uppercase"
                 style={{
                   textShadow: '0 2px 10px rgba(0,0,0,0.8), 0 4px 20px rgba(0,0,0,0.5)',
                 }}
               >
                 YOUR JOURNEY,
-              </h1>
-              <h2 
+              </p>
+              <p 
                 className="font-script text-[#C9A227] text-[64px] leading-none font-normal block mt-2 transform -rotate-1 pl-2"
                 style={{
                   textShadow: '0 2px 8px rgba(0,0,0,0.9), 0 1px 3px rgba(0,0,0,0.9)',
                 }}
               >
                 Our Priority
-              </h2>
+              </p>
             </motion.div>
 
             {/* Subtitle */}
@@ -507,7 +533,7 @@ export default function HomePage() {
                 textShadow: '0 2px 4px rgba(0,0,0,0.8), 0 1px 2px rgba(0,0,0,0.9)',
               }}
             >
-              Discover unforgettable destinations with expertly crafted holiday packages across India.
+              Discover <span className="text-[#C9A227] italic font-serif">Unforgettable Destinations</span> with expertly crafted luxury holiday packages across India.
             </motion.p>
 
             {/* Side by side buttons */}
@@ -532,6 +558,21 @@ export default function HomePage() {
                 <Compass className="w-4 h-4 text-[#8C6A3D]" />
                 CUSTOMIZE MY TRIP
               </a>
+
+              {/* Direct Email Callout */}
+              <div className="mt-3 text-center">
+                <span className="text-[10px] tracking-[0.25em] text-[#C9A227] font-extrabold uppercase block" style={{ textShadow: '0 1px 3px rgba(0,0,0,0.95)' }}>
+                  Direct Inquiries:
+                </span>
+                <a 
+                  href="mailto:lpagrawal48@gmail.com" 
+                  className="text-xs sm:text-sm text-white hover:text-[#C9A227] font-black mt-1 inline-flex items-center gap-1.5 transition-colors duration-300 tracking-wider uppercase"
+                  style={{ textShadow: '0 2px 5px rgba(0,0,0,0.95), 0 1px 2px rgba(0,0,0,0.95)' }}
+                >
+                  <Mail className="w-3.5 h-3.5 text-white" strokeWidth={3.5} />
+                  lpagrawal48@gmail.com
+                </a>
+              </div>
             </motion.div>
           </div>
 
@@ -540,29 +581,34 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="flex items-center justify-center gap-3.5 mt-10 py-3.5 px-4 bg-white/80 backdrop-blur-md border border-[#8C6A3D]/20 w-full max-w-[345px] mx-auto rounded-2xl shadow-lg relative z-20"
+            className="grid grid-cols-2 gap-y-3 gap-x-4 mt-10 py-4 px-5 bg-white/85 backdrop-blur-md border border-[#8C6A3D]/20 w-full max-w-[345px] mx-auto rounded-2xl shadow-lg relative z-20"
           >
             <div className="flex items-center gap-1.5">
               <span className="text-sm">⭐</span>
               <div className="text-left">
                 <p className="text-[10px] font-bold text-slate-900 leading-none">4.9/5 Rating</p>
-                <p className="text-[8px] text-slate-600 mt-0.5 leading-none whitespace-nowrap font-medium">Google Reviews</p>
+                <p className="text-[8px] text-slate-600 mt-1 leading-none whitespace-nowrap font-medium">Google Reviews</p>
               </div>
             </div>
-            <div className="h-5 w-[1px] bg-[#8C6A3D]/25"></div>
             <div className="flex items-center gap-1.5">
               <span className="text-sm">👥</span>
               <div className="text-left">
                 <p className="text-[10px] font-bold text-slate-900 leading-none">5000+</p>
-                <p className="text-[8px] text-slate-600 mt-0.5 leading-none whitespace-nowrap font-medium">Happy Travellers</p>
+                <p className="text-[8px] text-slate-600 mt-1 leading-none whitespace-nowrap font-medium">Happy Guests</p>
               </div>
             </div>
-            <div className="h-5 w-[1px] bg-[#8C6A3D]/25"></div>
-            <div className="flex items-center gap-1.5">
+            <div className="flex items-center gap-1.5 pt-2 border-t border-slate-100">
               <span className="text-sm">🛡️</span>
               <div className="text-left">
                 <p className="text-[10px] font-bold text-slate-900 leading-none">10+ Years</p>
-                <p className="text-[8px] text-slate-600 mt-0.5 leading-none whitespace-nowrap font-medium">Experience</p>
+                <p className="text-[8px] text-slate-600 mt-1 leading-none whitespace-nowrap font-medium">Experience</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-1.5 pt-2 border-t border-slate-100">
+              <span className="text-sm">✅</span>
+              <div className="text-left">
+                <p className="text-[10px] font-bold text-slate-900 leading-none">GST Verified</p>
+                <p className="text-[8px] text-slate-600 mt-1 leading-none whitespace-nowrap font-medium">Verified Agency</p>
               </div>
             </div>
           </motion.div>
@@ -627,7 +673,7 @@ export default function HomePage() {
                 textShadow: '0 2px 8px rgba(0,0,0,0.95), 0 1px 3px rgba(0,0,0,0.95)',
               }}
             >
-              Discover unforgettable destinations with expertly crafted holiday packages across India.
+              Discover <span className="text-[#C9A227] italic font-serif">Unforgettable Destinations</span> with expertly crafted luxury holiday packages across India.
             </motion.p>
 
             {/* CTA Buttons */}
@@ -635,23 +681,40 @@ export default function HomePage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="flex items-center gap-4 mt-8"
+              className="flex flex-col gap-4 mt-8"
             >
-              <a
-                href="#packages"
-                className="px-8 py-3.5 bg-[#8C6A3D] text-white font-bold text-xs tracking-widest uppercase hover:bg-white hover:text-[#8C6A3D] border border-[#8C6A3D] hover:scale-105 duration-300 rounded-full flex items-center justify-center gap-2 shadow-xl active:scale-95"
-              >
-                EXPLORE PACKAGES
-                <ChevronRight className="w-4 h-4" />
-              </a>
+              <div className="flex items-center gap-4">
+                <a
+                  href="#packages"
+                  className="px-8 py-3.5 bg-[#8C6A3D] text-white font-bold text-xs tracking-widest uppercase hover:bg-white hover:text-[#8C6A3D] border border-[#8C6A3D] hover:scale-105 duration-300 rounded-full flex items-center justify-center gap-2 shadow-xl active:scale-95"
+                >
+                  EXPLORE PACKAGES
+                  <ChevronRight className="w-4 h-4" />
+                </a>
 
-              <a
-                href="#contact"
-                className="px-8 py-3.5 bg-white border border-[#8C6A3D]/40 text-slate-800 font-bold text-xs tracking-widest uppercase hover:bg-slate-50 hover:scale-105 duration-300 rounded-full flex items-center justify-center gap-2 shadow-xl active:scale-95"
-              >
-                <Compass className="w-4 h-4 text-[#8C6A3D]" />
-                CUSTOMIZE MY TRIP
-              </a>
+                <a
+                  href="#contact"
+                  className="px-8 py-3.5 bg-white border border-[#8C6A3D]/40 text-slate-800 font-bold text-xs tracking-widest uppercase hover:bg-slate-50 hover:scale-105 duration-300 rounded-full flex items-center justify-center gap-2 shadow-xl active:scale-95"
+                >
+                  <Compass className="w-4 h-4 text-[#8C6A3D]" />
+                  CUSTOMIZE MY TRIP
+                </a>
+              </div>
+
+              {/* Direct Email Callout */}
+              <div className="flex items-center gap-2.5 mt-3 pl-1">
+                <span className="text-[11px] tracking-widest text-[#C9A227] font-extrabold uppercase" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.8)' }}>
+                  Direct Inquiries:
+                </span>
+                <a 
+                  href="mailto:lpagrawal48@gmail.com" 
+                  className="text-xs sm:text-sm text-white hover:text-[#C9A227] font-black inline-flex items-center gap-1.5 transition-colors duration-300 tracking-wider uppercase"
+                  style={{ textShadow: '0 2px 4px rgba(0,0,0,0.9)' }}
+                >
+                  <Mail className="w-4 h-4 text-white" strokeWidth={3.5} />
+                  lpagrawal48@gmail.com
+                </a>
+              </div>
             </motion.div>
 
             {/* Trust Section */}
@@ -659,35 +722,41 @@ export default function HomePage() {
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="flex items-center justify-between gap-6 md:gap-8 mt-12 py-4 px-6 bg-[#0B1B3A]/85 backdrop-blur-md border border-[#C9A227]/30 rounded-2xl shadow-xl w-full max-w-[520px]"
+              className="flex items-center justify-between gap-4 md:gap-6 mt-12 py-4 px-5 bg-[#0B1B3A]/85 backdrop-blur-md border border-[#C9A227]/30 rounded-2xl shadow-xl w-full max-w-2xl"
               style={{
                 marginRight: '15px',
                 marginLeft: '3px',
-                paddingRight: '26px',
-                paddingLeft: '1px',
               }}
             >
-              <div className="flex items-center gap-2.5">
+              <div className="flex items-center gap-2">
                 <span className="text-base text-[#C9A227] drop-shadow-sm">⭐</span>
                 <div>
                   <p className="text-xs font-bold text-white leading-none tracking-wide">4.9/5 Rating</p>
-                  <p className="text-[9px] text-slate-200 mt-1 leading-none whitespace-nowrap font-medium uppercase tracking-wider">Google Reviews</p>
+                  <p className="text-[8px] md:text-[9px] text-slate-200 mt-1 leading-none whitespace-nowrap font-medium uppercase tracking-wider">Google Reviews</p>
                 </div>
               </div>
               <div className="h-8 w-[1px] bg-[#C9A227]/35"></div>
-              <div className="flex items-center gap-2.5">
-                <span className="text-base text-[#C9A227] drop-shadow-sm">👥</span>
+              <div className="flex items-center gap-2">
+                <span className="text-base text-[#C9A227] drop-shadow-sm" style={{ marginLeft: '-34px' }}>👥</span>
                 <div>
                   <p className="text-xs font-bold text-white leading-none tracking-wide">5000+</p>
-                  <p className="text-[9px] text-slate-200 mt-1 leading-none whitespace-nowrap font-medium uppercase tracking-wider">Happy Travellers</p>
+                  <p className="text-[8px] md:text-[9px] text-slate-200 mt-1 leading-none whitespace-nowrap font-medium uppercase tracking-wider">Happy Guests</p>
                 </div>
               </div>
               <div className="h-8 w-[1px] bg-[#C9A227]/35"></div>
-              <div className="flex items-center gap-2.5">
-                <span className="text-base text-[#C9A227] drop-shadow-sm">🛡️</span>
+              <div className="flex items-center gap-2">
+                <span className="text-base text-[#C9A227] drop-shadow-sm" style={{ marginLeft: '-35px' }}>🛡️</span>
                 <div>
                   <p className="text-xs font-bold text-white leading-none tracking-wide">10+ Years</p>
-                  <p className="text-[9px] text-slate-200 mt-1 leading-none whitespace-nowrap font-medium uppercase tracking-wider">Trusted Experience</p>
+                  <p className="text-[8px] md:text-[9px] text-slate-200 mt-1 leading-none whitespace-nowrap font-medium uppercase tracking-wider">Trusted Agency</p>
+                </div>
+              </div>
+              <div className="h-8 w-[1px] bg-[#C9A227]/35"></div>
+              <div className="flex items-center gap-2">
+                <span className="text-base text-[#C9A227] drop-shadow-sm" style={{ marginRight: '-4px', marginLeft: '-51px' }}>✅</span>
+                <div>
+                  <p className="text-xs font-bold text-white leading-none tracking-wide">GST Verified</p>
+                  <p className="text-[8px] md:text-[9px] text-slate-200 mt-1 leading-none whitespace-nowrap font-medium uppercase tracking-wider">Verified Agency</p>
                 </div>
               </div>
             </motion.div>
@@ -1142,6 +1211,9 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* TRAVEL INSIGHTS SECTION */}
+      <TravelInsights />
+
       {/* ABOUT US SECTION */}
       <section id="about" className="py-24 bg-gradient-to-b from-[#FAF8F5] to-[#EFECE6] border-t border-slate-200 z-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1215,6 +1287,209 @@ export default function HomePage() {
                 </div>
               </div>
 
+              {/* Premium Verification Badge Card */}
+              <div className="p-5 bg-white border border-[#8C6A3D]/25 rounded-2xl shadow-md space-y-4 sm:space-y-0 sm:flex sm:items-center sm:justify-between sm:gap-4 mt-6">
+                <div>
+                  <p className="text-[9px] text-[#8C6A3D] font-bold uppercase tracking-widest font-mono">Agency Ownership</p>
+                  <p className="text-sm font-bold text-[#0B1B3A] font-serif uppercase tracking-wide">LP Agrawal</p>
+                  <p className="text-[10px] text-slate-500 font-medium">Founder & Chief Curator</p>
+                </div>
+                <div className="hidden sm:block h-12 w-[1px] bg-[#8C6A3D]/20" />
+                <div className="flex items-center gap-2.5">
+                  <div className="w-8 h-8 rounded-full bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-600 font-bold text-sm shrink-0">
+                    ✓
+                  </div>
+                  <div>
+                    <p className="text-[9px] text-[#8C6A3D] font-bold uppercase tracking-widest font-mono flex items-center gap-1.5 leading-none mb-1">
+                      GST Verified Organization
+                    </p>
+                    <p className="text-[11px] font-sans font-bold text-[#0B1B3A] leading-none">
+                      Government Registered Agency
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      {/* FAQ SCHEMA FOR SEO */}
+      <FAQSchema 
+        faqs={[
+          {
+            question: "How do I book a personalized luxury holiday with Friends Tours & Travels?",
+            answer: "Booking with us is simple and bespoke. You can initiate a booking by choosing a package on our website and clicking 'Enquire Now', filling out our contact form, or calling us directly. One of our dedicated travel designers will reach out to understand your preferences, customize the itinerary to your liking, and finalize your booking details."
+          },
+          {
+            question: "What is your cancellation and refund policy?",
+            answer: "We offer flexible cancellation policies depending on the chosen tour package, hotels, and airlines. Cancellations made 30 days or more before departure are eligible for a partial refund (excluding non-refundable airline deposits and service fees). Detailed terms for cancellation and refunds are provided clearly in your customized travel proposal before booking."
+          },
+          {
+            question: "What payment methods do you accept, and are they secure?",
+            answer: "We accept major credit/debit cards (Visa, Mastercard, American Express), secure bank wire transfers, and net banking options. All digital payments are processed through encrypted, PCI-compliant secure payment gateways to ensure maximum security for your transactions."
+          },
+          {
+            question: "Can I customize a pre-designed holiday package?",
+            answer: "Absolutely. Customization is our signature service. Every package featured on our website can be completely tailored to your desires—including dates of travel, duration, hotel selections, flight choices, private transportation, and specific sightseeing activities."
+          },
+          {
+            question: "What is typically included in a Friends Tours & Travels package?",
+            answer: "While each package varies, our luxury curated tours typically include premium hotel accommodations, daily breakfast, private chauffeur-driven transfers, curated sightseeing tours, English-speaking local guides, and 24/7 dedicated travel concierge support. Specific inclusions are detailed on every itinerary page."
+          },
+          {
+            question: "Do you provide visa assistance and international flight bookings?",
+            answer: "Yes, we provide comprehensive visa assistance, helping you compile the required documentation and guiding you through submission. We can also handle international and domestic flight bookings, travel insurance, and foreign exchange assistance to offer you a completely seamless journey."
+          }
+        ]}
+      />
+
+      {/* FREQUENTLY ASKED QUESTIONS SECTION */}
+      <section id="faq" className="py-24 bg-gradient-to-b from-[#FAF8F5] to-[#EFECE6] border-t border-slate-200 z-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            
+            {/* Descriptive Header Column (Left 5 cols) */}
+            <div className="lg:col-span-5 space-y-6 lg:sticky lg:top-28">
+              <div>
+                <span className="px-3 py-1 rounded-full border border-[#C9A227]/30 bg-[#C9A227]/5 text-[#C9A227] text-[10px] tracking-[0.25em] font-bold uppercase inline-block">
+                  FAQ • GUIDING YOUR JOURNEY
+                </span>
+                <h2 className="font-serif text-3xl sm:text-4xl tracking-wide font-bold text-[#0B1B3A] mt-4 uppercase leading-tight">
+                  FREQUENTLY ASKED <br />
+                  <span className="text-[#8C6A3D]">QUESTIONS</span>
+                </h2>
+                <div className="h-[2px] w-16 bg-[#C9A227] mt-4 rounded-full"></div>
+              </div>
+
+              {/* Decorative script */}
+              <p className="font-script text-[#C9A227] text-3xl sm:text-4xl leading-relaxed pl-1">
+                Your peace of mind is our highest luxury
+              </p>
+
+              <p className="text-slate-600 text-xs sm:text-sm leading-relaxed max-w-md">
+                We believe that clarity is essential to luxury travel. If you have any additional questions about our curation process, personalized services, or itineraries, our travel advisors are always at your service.
+              </p>
+
+              {/* Assistance Callout Card */}
+              <div className="bg-white/60 backdrop-blur-md border border-[#8C6A3D]/20 p-5 rounded-2xl shadow-sm space-y-4 max-w-md">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-[#0B1B3A] flex items-center justify-center text-white shrink-0 shadow-md">
+                    <HelpCircle className="w-5 h-5 text-[#C9A227]" />
+                  </div>
+                  <div>
+                    <h3 className="text-xs font-bold text-[#0B1B3A] uppercase tracking-wider">
+                      Need Bespoke Assistance?
+                    </h3>
+                    <p className="text-[11px] text-slate-500 font-medium">
+                      Our travel experts are available 24/7.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex flex-col sm:flex-row gap-3 pt-1">
+                  <a
+                    href="#contact"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      const element = document.getElementById('contact');
+                      if (element) {
+                        element.scrollIntoView({ behavior: 'smooth' });
+                      }
+                    }}
+                    className="flex-1 text-center py-2.5 bg-[#0B1B3A] hover:bg-[#C9A227] text-white text-[10px] tracking-widest font-bold uppercase rounded-lg transition-all duration-300 shadow-sm hover:shadow-md cursor-pointer"
+                  >
+                    Send Enquiry
+                  </a>
+                  <a
+                    href="mailto:lpagrawal48@gmail.com"
+                    className="flex-1 text-center py-2.5 bg-white border border-[#0B1B3A]/20 hover:bg-[#0B1B3A]/5 text-[#0B1B3A] text-[10px] tracking-widest font-bold uppercase rounded-lg transition-all duration-300 cursor-pointer flex items-center justify-center gap-2"
+                  >
+                    <Mail className="w-3.5 h-3.5 text-[#C9A227]" strokeWidth={3} />
+                    Direct Email
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Accordion Questions Column (Right 7 cols) */}
+            <div className="lg:col-span-7 space-y-4">
+              {[
+                {
+                  question: "How do I book a personalized luxury holiday with Friends Tours & Travels?",
+                  answer: "Booking with us is simple and bespoke. You can initiate a booking by choosing a package on our website and clicking 'Enquire Now', filling out our contact form, or calling us directly. One of our dedicated travel designers will reach out to understand your preferences, customize the itinerary to your liking, and finalize your booking details."
+                },
+                {
+                  question: "What is your cancellation and refund policy?",
+                  answer: "We offer flexible cancellation policies depending on the chosen tour package, hotels, and airlines. Cancellations made 30 days or more before departure are eligible for a partial refund (excluding non-refundable airline deposits and service fees). Detailed terms for cancellation and refunds are provided clearly in your customized travel proposal before booking."
+                },
+                {
+                  question: "What payment methods do you accept, and are they secure?",
+                  answer: "We accept major credit/debit cards (Visa, Mastercard, American Express), secure bank wire transfers, and net banking options. All digital payments are processed through encrypted, PCI-compliant secure payment gateways to ensure maximum security for your transactions."
+                },
+                {
+                  question: "Can I customize a pre-designed holiday package?",
+                  answer: "Absolutely. Customization is our signature service. Every package featured on our website can be completely tailored to your desires—including dates of travel, duration, hotel selections, flight choices, private transportation, and specific sightseeing activities."
+                },
+                {
+                  question: "What is typically included in a Friends Tours & Travels package?",
+                  answer: "While each package varies, our luxury curated tours typically include premium hotel accommodations, daily breakfast, private chauffeur-driven transfers, curated sightseeing tours, English-speaking local guides, and 24/7 dedicated travel concierge support. Specific inclusions are detailed on every itinerary page."
+                },
+                {
+                  question: "Do you provide visa assistance and international flight bookings?",
+                  answer: "Yes, we provide comprehensive visa assistance, helping you compile the required documentation and guiding you through submission. We can also handle international and domestic flight bookings, travel insurance, and foreign exchange assistance to offer you a completely seamless journey."
+                }
+              ].map((faq, index) => {
+                const isOpen = openFaqIndex === index;
+                return (
+                  <div 
+                    key={index}
+                    id={`faq-item-${index}`}
+                    className={`bg-white border transition-all duration-500 rounded-2xl overflow-hidden ${
+                      isOpen 
+                        ? 'border-[#C9A227] shadow-md ring-1 ring-[#C9A227]/20' 
+                        : 'border-[#8C6A3D]/25 hover:border-[#C9A227]/60 hover:shadow-sm'
+                    }`}
+                  >
+                    <button
+                      onClick={() => setOpenFaqIndex(isOpen ? null : index)}
+                      className="w-full text-left px-5 sm:px-6 py-5 flex items-center justify-between gap-4 cursor-pointer"
+                      aria-expanded={isOpen}
+                      aria-controls={`faq-answer-${index}`}
+                    >
+                      <span className="font-serif text-sm sm:text-base font-bold text-[#0B1B3A] tracking-wide leading-snug">
+                        {faq.question}
+                      </span>
+                      <span className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-all duration-300 ${
+                        isOpen ? 'bg-[#0B1B3A] text-[#C9A227] rotate-180' : 'bg-slate-100 text-[#0B1B3A] hover:bg-slate-200'
+                      }`}>
+                        <ChevronDown className="w-4 h-4 transition-transform duration-300" strokeWidth={3} />
+                      </span>
+                    </button>
+                    
+                    <AnimatePresence initial={false}>
+                      {isOpen && (
+                        <motion.div
+                          id={`faq-answer-${index}`}
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: 'auto', opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.35, ease: 'easeInOut' }}
+                        >
+                          <div className="px-5 sm:px-6 pb-6 border-t border-[#8C6A3D]/10 pt-4 bg-[#FAF8F5]/50">
+                            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed font-medium">
+                              {faq.answer}
+                            </p>
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                );
+              })}
             </div>
 
           </div>

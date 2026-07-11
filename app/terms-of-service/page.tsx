@@ -2,15 +2,24 @@ import { Metadata } from 'next';
 import React from 'react';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
+import { generateMetadataHelper } from '../../lib/seo';
+import BreadcrumbSchema from '../../components/seo/BreadcrumbSchema';
 
-export const metadata: Metadata = {
-  title: 'Terms of Service | Friends Tours & Travels',
+export const metadata: Metadata = generateMetadataHelper({
+  title: 'Terms of Service',
   description: 'Review the Terms of Service governing the booking, payment, and execution of luxury holiday packages curated by Friends Tours & Travels.',
-};
+  path: '/terms-of-service',
+});
 
 export default function TermsOfServicePage() {
+  const breadcrumbItems = [
+    { name: 'Home', url: '/' },
+    { name: 'Terms of Service', url: '/terms-of-service' },
+  ];
+
   return (
-    <main className="min-relative min-h-screen bg-[#FAF8F5] text-[#0B1B3A]">
+    <main className="relative min-h-screen bg-[#FAF8F5] text-[#0B1B3A]">
+      <BreadcrumbSchema items={breadcrumbItems} />
       <Navbar />
 
       {/* Hero Header */}

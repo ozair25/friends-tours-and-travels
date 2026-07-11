@@ -30,6 +30,12 @@ export const metadata: Metadata = generateMetadataHelper({
   path: '/',
 });
 
+export const viewport = {
+  themeColor: '#0B1B3A',
+  width: 'device-width',
+  initialScale: 1,
+};
+
 export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
     <html lang="en" className={`${inter.variable} ${cinzel.variable} ${greatVibes.variable} scroll-smooth`} suppressHydrationWarning>
