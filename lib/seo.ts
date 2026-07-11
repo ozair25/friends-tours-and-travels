@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 
-export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://friendstoursandtravel.com';
+export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.friendstoursandtravel.com';
 
 export const DEFAULT_SEO = {
   siteName: 'Friends Tours & Travels',
