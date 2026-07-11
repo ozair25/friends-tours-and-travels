@@ -1,6 +1,7 @@
 import type {Metadata} from 'next';
 import { Inter, Cinzel, Great_Vibes } from 'next/font/google';
 import './globals.css'; // Global styles
+import Script from 'next/script';
 import { generateMetadataHelper } from '../lib/seo';
 import OrganizationSchema from '../components/seo/OrganizationSchema';
 import TravelAgencySchema from '../components/seo/TravelAgencySchema';
@@ -40,6 +41,20 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
     <html lang="en" className={`${inter.variable} ${cinzel.variable} ${greatVibes.variable} scroll-smooth`} suppressHydrationWarning>
       <body className="antialiased bg-[#FAF8F5] text-slate-900 min-h-screen font-sans selection:bg-amber-400 selection:text-slate-900" suppressHydrationWarning>
+        {/* Google tag (gtag.js) */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-WF7C42FCYN"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-WF7C42FCYN');
+          `}
+        </Script>
         {/* Centralized Global SEO Schemas */}
         <OrganizationSchema />
         <TravelAgencySchema />
