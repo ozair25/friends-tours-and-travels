@@ -6,6 +6,61 @@ export interface GalleryItem {
   description: string;
 }
 
+export interface OccasionFlyer {
+  id: string;
+  url: string;
+  title: string;
+  occasion: string;
+  tagline?: string;
+  date?: string;
+  isLatest?: boolean;
+}
+
+export const OCCASION_FLYERS: OccasionFlyer[] = [
+  {
+    id: "independence-day-special",
+    url: "https://res.cloudinary.com/dtrvyelcg/image/upload/v1786889509/independence_day_flyer_kz0irv.jpg",
+    title: "Independence Day Celebrations Special",
+    occasion: "Independence Day",
+    tagline: "Celebrate Freedom with Unforgettable Journeys & Exclusive Festive Offers",
+    date: "August 2026",
+    isLatest: true,
+  },
+  {
+    id: "friendship-day-special",
+    url: "https://res.cloudinary.com/dtrvyelcg/image/upload/v1786890313/WhatsApp_Image_2026-08-16_at_7.50.51_PM_3_pwcckr.jpg",
+    title: "Friendship's Day Special Holiday Tour",
+    occasion: "Friendship's Day",
+    tagline: "Celebrate Unbreakable Bonds with Thrilling Group Getaways & Custom Stays",
+    date: "August 2026",
+    isLatest: true,
+  },
+  {
+    id: "festive-holiday-escapes",
+    url: "https://res.cloudinary.com/dtrvyelcg/image/upload/v1786890313/WhatsApp_Image_2026-08-16_at_7.50.52_PM_xjg3qk.jpg",
+    title: "Festive Occasion Travel Curation",
+    occasion: "Festive Holidays",
+    tagline: "Tailor-made itineraries, luxury transfers, and curated holiday destinations",
+    date: "August 2026",
+  },
+  {
+    id: "exclusive-occasions-tour",
+    url: "https://res.cloudinary.com/dtrvyelcg/image/upload/v1786890313/WhatsApp_Image_2026-08-16_at_7.50.51_PM_1_mmhkyx.jpg",
+    title: "Special Celebrations & Luxury Road Trips",
+    occasion: "Special Celebrations",
+    tagline: "Explore hill stations, golden beaches, and heritage circuits with private chauffeurs",
+    date: "August 2026",
+  },
+  {
+    id: "grand-holiday-adventures",
+    url: "https://res.cloudinary.com/dtrvyelcg/image/upload/v1786890313/WhatsApp_Image_2026-08-16_at_7.50.51_PM_d1davg.jpg",
+    title: "Occasion Holiday Package Deals",
+    occasion: "Holiday Deals",
+    tagline: "Unbeatable holiday privileges and all-inclusive travel planning from Indore",
+    date: "August 2026",
+  },
+];
+
 export const GALLERY_ITEMS: GalleryItem[] = [
   // Manali Gallery
   {
